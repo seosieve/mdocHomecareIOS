@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E19060A27FABE1000C52EE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19060927FABE1000C52EE6 /* AppDelegate.swift */; };
+		4E19060C27FABE1000C52EE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19060B27FABE1000C52EE6 /* SceneDelegate.swift */; };
+		4E19060E27FABE1000C52EE6 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19060D27FABE1000C52EE6 /* StartViewController.swift */; };
+		4E19061327FABE1200C52EE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E19061227FABE1200C52EE6 /* Assets.xcassets */; };
+		4E19061627FABE1200C52EE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E19061427FABE1200C52EE6 /* LaunchScreen.storyboard */; };
+		4E7E0D47280BF4430045E50C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D46280BF4430045E50C /* HomeViewController.swift */; };
+		4E7E0D49280BF8240045E50C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D48280BF8240045E50C /* DetailViewController.swift */; };
+		4E7E0D4B280D431B0045E50C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D4A280D431B0045E50C /* TabBarController.swift */; };
+		4E7E0D4D280D44720045E50C /* ContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D4C280D44720045E50C /* ContentsViewController.swift */; };
+		4E7E0D4F280D44A80045E50C /* DetailMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D4E280D44A80045E50C /* DetailMoreViewController.swift */; };
+		4E7E0D56280ED2EB0045E50C /* notImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4E7E0D55280ED2EB0045E50C /* notImage.jpeg */; };
+		4ED891AA281ABE80007F2C62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ED891A9281ABE80007F2C62 /* GoogleService-Info.plist */; };
+		8029B111D7ADAF4CAD6FA990 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 73FBE1426AF423FEE3143E01 /* amplifyconfiguration.json */; };
+		8979ABB3782C3B962BBE1B11 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = CCFBC1BD8BE344403531D7DC /* awsconfiguration.json */; };
+		952A7EDF1AFCED2DE995C6E6 /* Pods_mdocHomecare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC99EE341BEC1A8748457B8 /* Pods_mdocHomecare.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3AC99EE341BEC1A8748457B8 /* Pods_mdocHomecare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mdocHomecare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E19060627FABE1000C52EE6 /* mdocHomecare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdocHomecare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E19060927FABE1000C52EE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4E19060B27FABE1000C52EE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4E19060D27FABE1000C52EE6 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		4E19061227FABE1200C52EE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E19061527FABE1200C52EE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4E19061727FABE1200C52EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E7E0D46280BF4430045E50C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4E7E0D48280BF8240045E50C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4E7E0D4A280D431B0045E50C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4E7E0D4C280D44720045E50C /* ContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewController.swift; sourceTree = "<group>"; };
+		4E7E0D4E280D44A80045E50C /* DetailMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMoreViewController.swift; sourceTree = "<group>"; };
+		4E7E0D55280ED2EB0045E50C /* notImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = notImage.jpeg; sourceTree = "<group>"; };
+		4ED891A9281ABE80007F2C62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4ED891AB281AC5D1007F2C62 /* mdocHomecare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mdocHomecare.entitlements; sourceTree = "<group>"; };
+		73FBE1426AF423FEE3143E01 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		7F415D5048116E634EAF146F /* Pods-mdocHomecare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdocHomecare.release.xcconfig"; path = "Target Support Files/Pods-mdocHomecare/Pods-mdocHomecare.release.xcconfig"; sourceTree = "<group>"; };
+		CCFBC1BD8BE344403531D7DC /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		F60340E7CBD85D7978477A7B /* Pods-mdocHomecare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdocHomecare.debug.xcconfig"; path = "Target Support Files/Pods-mdocHomecare/Pods-mdocHomecare.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E19060327FABE1000C52EE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				952A7EDF1AFCED2DE995C6E6 /* Pods_mdocHomecare.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E1905FD27FABE1000C52EE6 = {
+			isa = PBXGroup;
+			children = (
+				4E7E0D55280ED2EB0045E50C /* notImage.jpeg */,
+				4E19060827FABE1000C52EE6 /* mdocHomecare */,
+				4E19060727FABE1000C52EE6 /* Products */,
+				97C24DBE2D95DDD766EE0A02 /* AmplifyConfig */,
+				C1D82A6EFB2C4314B99FC37E /* Pods */,
+				BD4EBD63F405307EC00F5F20 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4E19060727FABE1000C52EE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E19060627FABE1000C52EE6 /* mdocHomecare.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E19060827FABE1000C52EE6 /* mdocHomecare */ = {
+			isa = PBXGroup;
+			children = (
+				4ED891AB281AC5D1007F2C62 /* mdocHomecare.entitlements */,
+				4E19060927FABE1000C52EE6 /* AppDelegate.swift */,
+				4E19060B27FABE1000C52EE6 /* SceneDelegate.swift */,
+				4E19061227FABE1200C52EE6 /* Assets.xcassets */,
+				4E19061427FABE1200C52EE6 /* LaunchScreen.storyboard */,
+				4E19061727FABE1200C52EE6 /* Info.plist */,
+				4ED891A9281ABE80007F2C62 /* GoogleService-Info.plist */,
+				4E7E0D50280D44BA0045E50C /* Views */,
+			);
+			path = mdocHomecare;
+			sourceTree = "<group>";
+		};
+		4E7E0D50280D44BA0045E50C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E19060D27FABE1000C52EE6 /* StartViewController.swift */,
+				4E7E0D48280BF8240045E50C /* DetailViewController.swift */,
+				4E7E0D4A280D431B0045E50C /* TabBarController.swift */,
+				4E7E0D46280BF4430045E50C /* HomeViewController.swift */,
+				4E7E0D4C280D44720045E50C /* ContentsViewController.swift */,
+				4E7E0D4E280D44A80045E50C /* DetailMoreViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		97C24DBE2D95DDD766EE0A02 /* AmplifyConfig */ = {
+			isa = PBXGroup;
+			children = (
+				CCFBC1BD8BE344403531D7DC /* awsconfiguration.json */,
+				73FBE1426AF423FEE3143E01 /* amplifyconfiguration.json */,
+			);
+			name = AmplifyConfig;
+			sourceTree = "<group>";
+		};
+		BD4EBD63F405307EC00F5F20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AC99EE341BEC1A8748457B8 /* Pods_mdocHomecare.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1D82A6EFB2C4314B99FC37E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F60340E7CBD85D7978477A7B /* Pods-mdocHomecare.debug.xcconfig */,
+				7F415D5048116E634EAF146F /* Pods-mdocHomecare.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E19060527FABE1000C52EE6 /* mdocHomecare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E19061A27FABE1200C52EE6 /* Build configuration list for PBXNativeTarget "mdocHomecare" */;
+			buildPhases = (
+				D4C01A9E187D44FC33839A8C /* [CP] Check Pods Manifest.lock */,
+				4E19060227FABE1000C52EE6 /* Sources */,
+				4E19060327FABE1000C52EE6 /* Frameworks */,
+				4E19060427FABE1000C52EE6 /* Resources */,
+				AC719B512D44F80AA192E00F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mdocHomecare;
+			productName = mdocHomecare;
+			productReference = 4E19060627FABE1000C52EE6 /* mdocHomecare.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E1905FE27FABE1000C52EE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					4E19060527FABE1000C52EE6 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 4E19060127FABE1000C52EE6 /* Build configuration list for PBXProject "mdocHomecare" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4E1905FD27FABE1000C52EE6;
+			productRefGroup = 4E19060727FABE1000C52EE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E19060527FABE1000C52EE6 /* mdocHomecare */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E19060427FABE1000C52EE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E19061627FABE1200C52EE6 /* LaunchScreen.storyboard in Resources */,
+				4ED891AA281ABE80007F2C62 /* GoogleService-Info.plist in Resources */,
+				4E19061327FABE1200C52EE6 /* Assets.xcassets in Resources */,
+				8979ABB3782C3B962BBE1B11 /* awsconfiguration.json in Resources */,
+				8029B111D7ADAF4CAD6FA990 /* amplifyconfiguration.json in Resources */,
+				4E7E0D56280ED2EB0045E50C /* notImage.jpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AC719B512D44F80AA192E00F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mdocHomecare/Pods-mdocHomecare-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mdocHomecare/Pods-mdocHomecare-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdocHomecare/Pods-mdocHomecare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4C01A9E187D44FC33839A8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mdocHomecare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E19060227FABE1000C52EE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E19060E27FABE1000C52EE6 /* StartViewController.swift in Sources */,
+				4E7E0D4D280D44720045E50C /* ContentsViewController.swift in Sources */,
+				4E19060A27FABE1000C52EE6 /* AppDelegate.swift in Sources */,
+				4E7E0D49280BF8240045E50C /* DetailViewController.swift in Sources */,
+				4E7E0D4B280D431B0045E50C /* TabBarController.swift in Sources */,
+				4E19060C27FABE1000C52EE6 /* SceneDelegate.swift in Sources */,
+				4E7E0D4F280D44A80045E50C /* DetailMoreViewController.swift in Sources */,
+				4E7E0D47280BF4430045E50C /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4E19061427FABE1200C52EE6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E19061527FABE1200C52EE6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E19061827FABE1200C52EE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4E19061927FABE1200C52EE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E19061B27FABE1200C52EE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F60340E7CBD85D7978477A7B /* Pods-mdocHomecare.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = mdocHomecare/mdocHomecare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B44YL23J9X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = mdocHomecare/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seosieve.mdocHomecare-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4E19061C27FABE1200C52EE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F415D5048116E634EAF146F /* Pods-mdocHomecare.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = mdocHomecare/mdocHomecare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B44YL23J9X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = mdocHomecare/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seosieve.mdocHomecare-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E19060127FABE1000C52EE6 /* Build configuration list for PBXProject "mdocHomecare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E19061827FABE1200C52EE6 /* Debug */,
+				4E19061927FABE1200C52EE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E19061A27FABE1200C52EE6 /* Build configuration list for PBXNativeTarget "mdocHomecare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E19061B27FABE1200C52EE6 /* Debug */,
+				4E19061C27FABE1200C52EE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4E1905FE27FABE1000C52EE6 /* Project object */;
+}

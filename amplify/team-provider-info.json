@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mdochomecare-dev-145104-authRole",
+      "UnauthRoleArn": "arn:aws:iam::074202938609:role/amplify-mdochomecare-dev-145104-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::074202938609:role/amplify-mdochomecare-dev-145104-authRole",
+      "Region": "ap-northeast-2",
+      "DeploymentBucketName": "amplify-mdochomecare-dev-145104-deployment",
+      "UnauthRoleName": "amplify-mdochomecare-dev-145104-unauthRole",
+      "StackName": "amplify-mdochomecare-dev-145104",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:074202938609:stack/amplify-mdochomecare-dev-145104/39ec9b20-b3db-11ec-87aa-06252c4d86d8",
+      "AmplifyAppId": "d3gy0zvo4z5b4y"
+    },
+    "categories": {
+      "auth": {
+        "mdochomecareb2058780": {}
+      }
+    }
+  }
+}
