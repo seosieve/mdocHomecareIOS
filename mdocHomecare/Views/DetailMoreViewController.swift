@@ -9,21 +9,31 @@ import UIKit
 
 class DetailMoreViewController: UIViewController {
 
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        // Do any additional setup after loading the view.
+        setViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setViews() {
+        let button = UIButton()
+        view.addSubview(button)
+        button.setTitle("LocalNoti", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+        button.backgroundColor = .orange
+        button.frame = CGRect(x: 100, y: 100, width: 200, height: 52)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        let leading = button.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        let trailing = button.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        
+        let centerX = button.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        let centerY = button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        NSLayoutConstraint.activate([leading, trailing, centerX, centerY])
     }
-    */
-
 }

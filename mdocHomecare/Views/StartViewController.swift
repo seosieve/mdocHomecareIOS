@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Then
+import SnapKit
 import Amplify
 import Combine
 import UserNotifications
@@ -14,24 +16,40 @@ class StartViewController: UIViewController {
 
     let userNotificationCenter = UNUserNotificationCenter.current()
     
-    lazy var notiButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("LocalNoti", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        button.backgroundColor = .orange
-        button.frame = CGRect(x: 100, y: 100, width: 200, height: 52)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(didTabButton), for: .touchUpInside)
-        return button
-    }()
+    lazy var mdocLogo = UIImageView().then {
+        $0.image = Asset.logoHc.image
+    }
+    
+    lazy var backgroundImage = UIImageView().then {
+        $0.image = Asset.startImg.image
+    }
+    
+    lazy var mainLabel = UILabel().then {
+        $0.text = "환자•보호자용"
+        $0.font = UIFont(font: FontFamily.SFProText.bold, size: 18)
+        $0.textColor = Colors.Text.mainContent.withAlphaComponent(0.3)
+    }
+    
+    lazy var subLabel = UILabel().then {
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+        $0.text = "환자분의 건강관리를\n더욱 효과적으로 도와드리겠습니다"
+        $0.font = UIFont(font: FontFamily.SFProText.regular, size: 16)
+        $0.textColor = Colors.Text.mainContent
+    }
+    
+    lazy var startButton = UIButton().then {
+        $0.backgroundColor = Colors.Semantic.mdocBlue
+        $0.setTitle("시작하기", for: .normal)
+        $0.titleLabel?.font = UIFont(font: FontFamily.SFProText.regular, size: 16)
+        $0.titleLabel?.textColor = Colors.Layout.I0
+        $0.addTarget(self, action: #selector(didTabButton), for: .touchUpInside)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let test = UILabel()
         view.backgroundColor = .white
         setViews()
-        requestNotificationAuthorization()
-        sendNotification(seconds: 6)
     }
     
     @objc private func didTabButton() {
@@ -41,9 +59,35 @@ class StartViewController: UIViewController {
     }
     
     func setViews() {
-        view.addSubview(notiButton)
-        notiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        notiButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        self.view.addSubview(mdocLogo)
+        mdocLogo.translatesAutoresizingMaskIntoConstraints = false
+        mdocLogo.heightAnchor.constraint(equalToConstant: 96).isActive = true
+        mdocLogo.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        mdocLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        mdocLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 60*UIScreen.main.bounds.width/100).isActive = true
+    
+        self.view.addSubview(backgroundImage)
+        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImage.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
+        backgroundImage.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        self.view.addSubview(mainLabel)
+        mainLabel.translatesAutoresizingMaskIntoConstraints = false
+        mainLabel.topAnchor.constraint(equalTo: mdocLogo.bottomAnchor, constant: 25).isActive = true
+        mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        self.view.addSubview(subLabel)
+        subLabel.translatesAutoresizingMaskIntoConstraints = false
+        subLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 24).isActive = true
+        subLabel.centerXAnchor.constraint(equalTo: mainLabel.centerXAnchor).isActive = true
+        
+        self.view.addSubview(startButton)
+        startButton.translatesAutoresizingMaskIntoConstraints = false
+        startButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        startButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        startButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        startButton.rounded()
     }
     
     //MARK: - Notification
@@ -119,7 +163,5 @@ class StartViewController: UIViewController {
             }
         return sink
     }
-
-
 }
 

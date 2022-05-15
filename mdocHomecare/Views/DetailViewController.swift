@@ -9,21 +9,35 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    lazy var textField: UITextField = {
+        let width = 250
+        let height = 60
+        let posX: CGFloat = (self.view.bounds.width - CGFloat(width))/2
+        let posY: CGFloat = (self.view.bounds.height - CGFloat(height))/2
+        let textField = UITextField(frame: CGRect(x: posX, y: posY, width: 300, height: 20))
+        
+        textField.text = "dwadwadwa"
+        textField.backgroundColor = .gray
+        textField.delegate = self
+        
+        return textField
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .green
+        view.backgroundColor = .white
+        setViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setViews() {
+        self.view.addSubview(textField)
+        
     }
-    */
+}
 
+//MARK: - UITextFieldDelegate
+extension DetailViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) { print("textFieldDidBeginEditing: \((textField.text) ?? "Empty")") }
+    
 }

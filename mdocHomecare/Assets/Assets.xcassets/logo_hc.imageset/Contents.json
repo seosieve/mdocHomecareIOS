@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "KakaoTalk_Photo_2021-12-31-00-04-03 004.jpeg",
+      "filename" : "logo hc.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "KakaoTalk_Photo_2021-12-31-00-04-03 004-1.jpeg",
+      "filename" : "logo hc@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "KakaoTalk_Photo_2021-12-31-00-04-03 004-2.jpeg",
+      "filename" : "logo hc@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

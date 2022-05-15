@@ -17,7 +17,12 @@
 		4E7E0D4B280D431B0045E50C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D4A280D431B0045E50C /* TabBarController.swift */; };
 		4E7E0D4D280D44720045E50C /* ContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D4C280D44720045E50C /* ContentsViewController.swift */; };
 		4E7E0D4F280D44A80045E50C /* DetailMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D4E280D44A80045E50C /* DetailMoreViewController.swift */; };
-		4E7E0D56280ED2EB0045E50C /* notImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4E7E0D55280ED2EB0045E50C /* notImage.jpeg */; };
+		4EBC5068281FB30500CCEA94 /* Colors+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC5067281FB30500CCEA94 /* Colors+Generated.swift */; };
+		4EBC506C281FBE2A00CCEA94 /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC506B281FBE2A00CCEA94 /* Assets+Generated.swift */; };
+		4EBC50782830D1E800CCEA94 /* Fonts+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC50772830D1E800CCEA94 /* Fonts+Generated.swift */; };
+		4EBC508028311EF400CCEA94 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4EBC507E2830DC5000CCEA94 /* SF-Pro-Text-Bold.otf */; };
+		4EBC508128311EF600CCEA94 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4EBC507F2830DC5B00CCEA94 /* SF-Pro-Text-Regular.otf */; };
+		4EBC508328311FE700CCEA94 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC508228311FE700CCEA94 /* Extensions.swift */; };
 		4ED891AA281ABE80007F2C62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ED891A9281ABE80007F2C62 /* GoogleService-Info.plist */; };
 		8029B111D7ADAF4CAD6FA990 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 73FBE1426AF423FEE3143E01 /* amplifyconfiguration.json */; };
 		8979ABB3782C3B962BBE1B11 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = CCFBC1BD8BE344403531D7DC /* awsconfiguration.json */; };
@@ -38,7 +43,12 @@
 		4E7E0D4A280D431B0045E50C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4E7E0D4C280D44720045E50C /* ContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewController.swift; sourceTree = "<group>"; };
 		4E7E0D4E280D44A80045E50C /* DetailMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMoreViewController.swift; sourceTree = "<group>"; };
-		4E7E0D55280ED2EB0045E50C /* notImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = notImage.jpeg; sourceTree = "<group>"; };
+		4EBC5067281FB30500CCEA94 /* Colors+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors+Generated.swift"; sourceTree = "<group>"; };
+		4EBC506B281FBE2A00CCEA94 /* Assets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
+		4EBC50772830D1E800CCEA94 /* Fonts+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fonts+Generated.swift"; sourceTree = "<group>"; };
+		4EBC507E2830DC5000CCEA94 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		4EBC507F2830DC5B00CCEA94 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		4EBC508228311FE700CCEA94 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4ED891A9281ABE80007F2C62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4ED891AB281AC5D1007F2C62 /* mdocHomecare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mdocHomecare.entitlements; sourceTree = "<group>"; };
 		73FBE1426AF423FEE3143E01 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
@@ -62,7 +72,6 @@
 		4E1905FD27FABE1000C52EE6 = {
 			isa = PBXGroup;
 			children = (
-				4E7E0D55280ED2EB0045E50C /* notImage.jpeg */,
 				4E19060827FABE1000C52EE6 /* mdocHomecare */,
 				4E19060727FABE1000C52EE6 /* Products */,
 				97C24DBE2D95DDD766EE0A02 /* AmplifyConfig */,
@@ -82,14 +91,16 @@
 		4E19060827FABE1000C52EE6 /* mdocHomecare */ = {
 			isa = PBXGroup;
 			children = (
+				4EBC506A281FBDDE00CCEA94 /* Generated */,
+				4ED891B1281FA8E8007F2C62 /* Assets */,
+				4E7E0D50280D44BA0045E50C /* Views */,
 				4ED891AB281AC5D1007F2C62 /* mdocHomecare.entitlements */,
 				4E19060927FABE1000C52EE6 /* AppDelegate.swift */,
 				4E19060B27FABE1000C52EE6 /* SceneDelegate.swift */,
-				4E19061227FABE1200C52EE6 /* Assets.xcassets */,
 				4E19061427FABE1200C52EE6 /* LaunchScreen.storyboard */,
-				4E19061727FABE1200C52EE6 /* Info.plist */,
 				4ED891A9281ABE80007F2C62 /* GoogleService-Info.plist */,
-				4E7E0D50280D44BA0045E50C /* Views */,
+				4E19061727FABE1200C52EE6 /* Info.plist */,
+				4EBC508228311FE700CCEA94 /* Extensions.swift */,
 			);
 			path = mdocHomecare;
 			sourceTree = "<group>";
@@ -105,6 +116,34 @@
 				4E7E0D4E280D44A80045E50C /* DetailMoreViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4EBC506A281FBDDE00CCEA94 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				4EBC5067281FB30500CCEA94 /* Colors+Generated.swift */,
+				4EBC506B281FBE2A00CCEA94 /* Assets+Generated.swift */,
+				4EBC50772830D1E800CCEA94 /* Fonts+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		4ED891AC281F9C6E007F2C62 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4EBC507E2830DC5000CCEA94 /* SF-Pro-Text-Bold.otf */,
+				4EBC507F2830DC5B00CCEA94 /* SF-Pro-Text-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4ED891B1281FA8E8007F2C62 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4E19061227FABE1200C52EE6 /* Assets.xcassets */,
+				4ED891AC281F9C6E007F2C62 /* Fonts */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		97C24DBE2D95DDD766EE0A02 /* AmplifyConfig */ = {
@@ -145,6 +184,8 @@
 				4E19060327FABE1000C52EE6 /* Frameworks */,
 				4E19060427FABE1000C52EE6 /* Resources */,
 				AC719B512D44F80AA192E00F /* [CP] Embed Pods Frameworks */,
+				4EBC50752830D04A00CCEA94 /* ShellScript */,
+				4EBC50762830D1C100CCEA94 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -195,16 +236,51 @@
 			files = (
 				4E19061627FABE1200C52EE6 /* LaunchScreen.storyboard in Resources */,
 				4ED891AA281ABE80007F2C62 /* GoogleService-Info.plist in Resources */,
+				4EBC508028311EF400CCEA94 /* SF-Pro-Text-Bold.otf in Resources */,
 				4E19061327FABE1200C52EE6 /* Assets.xcassets in Resources */,
 				8979ABB3782C3B962BBE1B11 /* awsconfiguration.json in Resources */,
 				8029B111D7ADAF4CAD6FA990 /* amplifyconfiguration.json in Resources */,
-				4E7E0D56280ED2EB0045E50C /* notImage.jpeg in Resources */,
+				4EBC508128311EF600CCEA94 /* SF-Pro-Text-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4EBC50752830D04A00CCEA94 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftgen xcassets --templateName swift5 --param forceProvidesNamespaces --output mdocHomecare/Generated/Assets+Generated.swift mdocHomecare/Assets/Assets.xcassets\n";
+		};
+		4EBC50762830D1C100CCEA94 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftgen fonts --templateName swift5 --output mdocHomecare/Generated/Fonts+Generated.swift mdocHomecare/Assets/Fonts\n";
+		};
 		AC719B512D44F80AA192E00F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,10 +330,14 @@
 				4E19060E27FABE1000C52EE6 /* StartViewController.swift in Sources */,
 				4E7E0D4D280D44720045E50C /* ContentsViewController.swift in Sources */,
 				4E19060A27FABE1000C52EE6 /* AppDelegate.swift in Sources */,
+				4EBC50782830D1E800CCEA94 /* Fonts+Generated.swift in Sources */,
+				4EBC5068281FB30500CCEA94 /* Colors+Generated.swift in Sources */,
 				4E7E0D49280BF8240045E50C /* DetailViewController.swift in Sources */,
 				4E7E0D4B280D431B0045E50C /* TabBarController.swift in Sources */,
+				4EBC508328311FE700CCEA94 /* Extensions.swift in Sources */,
 				4E19060C27FABE1000C52EE6 /* SceneDelegate.swift in Sources */,
 				4E7E0D4F280D44A80045E50C /* DetailMoreViewController.swift in Sources */,
+				4EBC506C281FBE2A00CCEA94 /* Assets+Generated.swift in Sources */,
 				4E7E0D47280BF4430045E50C /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
