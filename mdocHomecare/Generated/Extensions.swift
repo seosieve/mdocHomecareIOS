@@ -7,6 +7,13 @@
 
 import UIKit
 
+let window: UIWindow = {
+    let scenes = UIApplication.shared.connectedScenes
+    let windowScene = scenes.first as? UIWindowScene
+    let window = windowScene?.windows.first ?? UIWindow()
+    return window
+}()
+
 extension UIView {
     func rounded() {
         layoutIfNeeded()
@@ -14,3 +21,6 @@ extension UIView {
         self.layer.cornerRadius = self.frame.height/2
     }
 }
+
+
+

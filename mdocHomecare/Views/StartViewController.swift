@@ -46,9 +46,14 @@ class StartViewController: UIViewController {
         $0.addTarget(self, action: #selector(didTabButton), for: .touchUpInside)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = Colors.Layout.I0
         setViews()
     }
     
@@ -59,17 +64,35 @@ class StartViewController: UIViewController {
     }
     
     func setViews() {
+        
+        let screenSize = UIScreen.main.bounds
+        
+        
         self.view.addSubview(mdocLogo)
-        mdocLogo.translatesAutoresizingMaskIntoConstraints = false
-        mdocLogo.heightAnchor.constraint(equalToConstant: 96).isActive = true
-        mdocLogo.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        mdocLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        mdocLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 60*UIScreen.main.bounds.width/100).isActive = true
+        mdocLogo.snp.makeConstraints { make in
+            make.height.equalTo(96)
+            make.width.equalTo(200)
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().inset(60*screenSize.width/100)
+            
+        }
+        
+        
+//        mdocLogo.translatesAutoresizingMaskIntoConstraints = false
+//        mdocLogo.heightAnchor.constraint(equalToConstant: 96).isActive = true
+//        mdocLogo.widthAnchor.constraint(equalToConstant: 200).isActive = true
+//        mdocLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        mdocLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 60*UIScreen.main.bounds.width/100).isActive = true
     
         self.view.addSubview(backgroundImage)
-        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
-        backgroundImage.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
-        backgroundImage.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        backgroundImage.snp.makeConstraints { make in
+            make.width.equalTo(screenSize.width)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+//        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+//        backgroundImage.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
+//        backgroundImage.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
         self.view.addSubview(mainLabel)
         mainLabel.translatesAutoresizingMaskIntoConstraints = false

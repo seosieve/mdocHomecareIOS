@@ -16,12 +16,31 @@ enum Colors {
                 dark: UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1)
             )
         }
+        static var subContent: UIColor {
+            return color(
+                light: UIColor(red: 0.63, green: 0.63, blue: 0.63, alpha: 1),
+                dark: UIColor(red: 0.63, green: 0.63, blue: 0.63, alpha: 1)
+            )
+        }
     }
     enum Layout {
         static var I0: UIColor {
             return color(
                 light: UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1),
                 dark: UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
+            )
+        }
+        static var I5: UIColor {
+            return color(
+                light: UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1),
+                dark: UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1)
+            )
+        }
+        
+        static var I20: UIColor {
+            return color(
+                light: UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1),
+                dark: UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1)
             )
         }
     }

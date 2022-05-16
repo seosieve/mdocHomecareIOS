@@ -10,8 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
@@ -21,11 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //Login 했을 때 VC
         let homeViewController = TabBarController()
         
-        
         let detailViewController = DetailViewController()
         
         let vc = userHasLoggedIn ? homeViewController : startViewController
-        window?.rootViewController = UINavigationController(rootViewController: startViewController)
+        window?.rootViewController = homeViewController
         window?.makeKeyAndVisible()
     }
 

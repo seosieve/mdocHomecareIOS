@@ -1,5 +1,5 @@
 //
-//  ContentsViewController.swift
+//  EducationViewController.swift
 //  mdocHomecare
 //
 //  Created by 서충원 on 2022/04/18.
@@ -8,7 +8,7 @@
 import UIKit
 import UserNotifications
 
-class ContentsViewController: UIViewController {
+class EducationViewController: UIViewController {
 
     let userNotificationCenter = UNUserNotificationCenter.current()
     

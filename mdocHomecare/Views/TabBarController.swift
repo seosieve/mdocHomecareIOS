@@ -9,27 +9,37 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tabBar.barTintColor = UIColor.green
-        tabBar.tintColor = UIColor.purple
-        tabBar.unselectedItemTintColor = UIColor.black
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBar.layer.borderWidth = 1
+        tabBar.layer.borderColor = Colors.Layout.I20.cgColor
+        tabBar.tintColor = Colors.Semantic.mdocBlue
+        tabBar.unselectedItemTintColor = Colors.Text.subContent
+        tabBar.backgroundColor = Colors.Layout.I0
         setUpTabBar()
     }
     
     private func setUpTabBar() {
-        let homeViewController = UINavigationController(rootViewController: HomeViewController())
-        homeViewController.tabBarItem.image = UIImage(named: "home")
-        homeViewController.tabBarItem.title = "상담"
-        let contentsViewController = UINavigationController(rootViewController: ContentsViewController())
-        contentsViewController.tabBarItem.image = UIImage(named: "contents")
-        contentsViewController.tabBarItem.title = "일정"
+        let homeVC = ChangableNavigationController(rootViewController: HomeViewController())
+        homeVC.tabBarItem.image = Asset.TabBarImages.home.image
+        homeVC.tabBarItem.title = "상담"
+        homeVC.navigationBar.barStyle = .black
         
-        let detailMoreViewController = UINavigationController(rootViewController: DetailMoreViewController())
-        detailMoreViewController.tabBarItem.image = UIImage(named: "detailMore")
-        detailMoreViewController.tabBarItem.title = "더보기"
+        let educationVC = UINavigationController(rootViewController: EducationViewController())
+        educationVC.tabBarItem.image = Asset.TabBarImages.education.image
+        educationVC.tabBarItem.title = "교육자료"
         
-        setViewControllers([homeViewController, contentsViewController, detailMoreViewController], animated: true)
-//        viewControllers =
+        let settingVC = UINavigationController(rootViewController: SettingViewController())
+        settingVC.navigationItem.title = "ddddddal"
+        settingVC.tabBarItem.image = Asset.TabBarImages.setting.image
+        settingVC.tabBarItem.title = "더보기"
+        
+        setViewControllers([homeVC, educationVC, settingVC], animated: true)
     }
+}
+
+//MARK: - ChangableNavigationController
+//view마다 statusBarMode다르게 적용하기 위해 상속
+class ChangableNavigationController: UINavigationController {
+    override var childForStatusBarStyle: UIViewController? { return visibleViewController}
 }
