@@ -74,15 +74,7 @@ class StartViewController: UIViewController {
             make.width.equalTo(200)
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().inset(60*screenSize.width/100)
-            
         }
-        
-        
-//        mdocLogo.translatesAutoresizingMaskIntoConstraints = false
-//        mdocLogo.heightAnchor.constraint(equalToConstant: 96).isActive = true
-//        mdocLogo.widthAnchor.constraint(equalToConstant: 200).isActive = true
-//        mdocLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//        mdocLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 60*UIScreen.main.bounds.width/100).isActive = true
     
         self.view.addSubview(backgroundImage)
         backgroundImage.snp.makeConstraints { make in
@@ -187,4 +179,3 @@ class StartViewController: UIViewController {
         return sink
     }
 }
-

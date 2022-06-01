@@ -24,6 +24,7 @@
 		4EBC508128311EF600CCEA94 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4EBC507F2830DC5B00CCEA94 /* SF-Pro-Text-Regular.otf */; };
 		4EBC508328311FE700CCEA94 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC508228311FE700CCEA94 /* Extensions.swift */; };
 		4ED891AA281ABE80007F2C62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ED891A9281ABE80007F2C62 /* GoogleService-Info.plist */; };
+		4EFCC833283E2B5F00A36BB0 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFCC832283E2B5F00A36BB0 /* ScheduleTableViewCell.swift */; };
 		8029B111D7ADAF4CAD6FA990 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 73FBE1426AF423FEE3143E01 /* amplifyconfiguration.json */; };
 		8979ABB3782C3B962BBE1B11 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = CCFBC1BD8BE344403531D7DC /* awsconfiguration.json */; };
 		952A7EDF1AFCED2DE995C6E6 /* Pods_mdocHomecare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC99EE341BEC1A8748457B8 /* Pods_mdocHomecare.framework */; };
@@ -51,6 +52,7 @@
 		4EBC508228311FE700CCEA94 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4ED891A9281ABE80007F2C62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4ED891AB281AC5D1007F2C62 /* mdocHomecare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mdocHomecare.entitlements; sourceTree = "<group>"; };
+		4EFCC832283E2B5F00A36BB0 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		73FBE1426AF423FEE3143E01 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		7F415D5048116E634EAF146F /* Pods-mdocHomecare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdocHomecare.release.xcconfig"; path = "Target Support Files/Pods-mdocHomecare/Pods-mdocHomecare.release.xcconfig"; sourceTree = "<group>"; };
 		CCFBC1BD8BE344403531D7DC /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
@@ -110,7 +112,7 @@
 				4E19060D27FABE1000C52EE6 /* StartViewController.swift */,
 				4E7E0D48280BF8240045E50C /* DetailViewController.swift */,
 				4E7E0D4A280D431B0045E50C /* TabBarController.swift */,
-				4E7E0D46280BF4430045E50C /* HomeViewController.swift */,
+				4EFCC82F283E2B2700A36BB0 /* Home */,
 				4E7E0D4C280D44720045E50C /* EducationViewController.swift */,
 				4E7E0D4E280D44A80045E50C /* SettingController.swift */,
 			);
@@ -144,6 +146,15 @@
 				4ED891AC281F9C6E007F2C62 /* Fonts */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		4EFCC82F283E2B2700A36BB0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4E7E0D46280BF4430045E50C /* HomeViewController.swift */,
+				4EFCC832283E2B5F00A36BB0 /* ScheduleTableViewCell.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		97C24DBE2D95DDD766EE0A02 /* AmplifyConfig */ = {
@@ -328,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E19060E27FABE1000C52EE6 /* StartViewController.swift in Sources */,
+				4EFCC833283E2B5F00A36BB0 /* ScheduleTableViewCell.swift in Sources */,
 				4E7E0D4D280D44720045E50C /* EducationViewController.swift in Sources */,
 				4E19060A27FABE1000C52EE6 /* AppDelegate.swift in Sources */,
 				4EBC50782830D1E800CCEA94 /* Fonts+Generated.swift in Sources */,

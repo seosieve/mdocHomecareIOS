@@ -22,6 +22,12 @@ enum Colors {
                 dark: UIColor(red: 0.63, green: 0.63, blue: 0.63, alpha: 1)
             )
         }
+        static var blueSubContent: UIColor {
+            return color(
+                light: UIColor(red: 0.44, green: 0.52, blue: 0.87, alpha: 1),
+                dark: UIColor(red: 0.44, green: 0.52, blue: 0.87, alpha: 1)
+            )
+        }
     }
     enum Layout {
         static var I0: UIColor {
@@ -51,7 +57,6 @@ enum Colors {
                 dark: UIColor(red: 0.2, green: 0.31, blue: 0.82, alpha: 1)
             )
         }
-        
     }
 }
 
