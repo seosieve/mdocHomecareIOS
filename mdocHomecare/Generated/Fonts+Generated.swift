@@ -20,8 +20,9 @@ internal typealias Font = FontConvertible.Font
 internal enum FontFamily {
   internal enum SFProText {
     internal static let bold = FontConvertible(name: "SFProText-Bold", family: "SF Pro Text", path: "SF-Pro-Text-Bold.otf")
+    internal static let medium = FontConvertible(name: "SFProText-Medium", family: "SF Pro Text", path: "SF-Pro-Text-Medium.otf")
     internal static let regular = FontConvertible(name: "SFProText-Regular", family: "SF Pro Text", path: "SF-Pro-Text-Regular.otf")
-    internal static let all: [FontConvertible] = [bold, regular]
+    internal static let all: [FontConvertible] = [bold, medium, regular]
   }
   internal static let allCustomFonts: [FontConvertible] = [SFProText.all].flatMap { $0 }
   internal static func registerAllCustomFonts() {

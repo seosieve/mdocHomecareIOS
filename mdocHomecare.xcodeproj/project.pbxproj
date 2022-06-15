@@ -39,6 +39,7 @@
 		4E19061227FABE1200C52EE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E19061527FABE1200C52EE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E19061727FABE1200C52EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E43686B2859EBDE00BEDD07 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		4E7E0D46280BF4430045E50C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4E7E0D48280BF8240045E50C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4E7E0D4A280D431B0045E50C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -133,6 +134,7 @@
 		4ED891AC281F9C6E007F2C62 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				4E43686B2859EBDE00BEDD07 /* SF-Pro-Text-Medium.otf */,
 				4EBC507E2830DC5000CCEA94 /* SF-Pro-Text-Bold.otf */,
 				4EBC507F2830DC5B00CCEA94 /* SF-Pro-Text-Regular.otf */,
 			);

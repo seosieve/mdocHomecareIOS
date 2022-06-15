@@ -12,4 +12,5 @@ target 'mdocHomecare' do
   pod 'Then'
   pod 'Firebase'
   pod 'Firebase/Messaging'
+  pod "YoutubePlayer-in-WKWebView", "~> 0.3.0"
 end

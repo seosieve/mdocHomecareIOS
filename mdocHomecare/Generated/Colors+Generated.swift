@@ -8,7 +8,6 @@
 import UIKit
 
 enum Colors {
-    
     enum Text {
         static var mainContent: UIColor {
             return color(
@@ -24,8 +23,8 @@ enum Colors {
         }
         static var blueSubContent: UIColor {
             return color(
-                light: UIColor(red: 0.44, green: 0.52, blue: 0.87, alpha: 1),
-                dark: UIColor(red: 0.44, green: 0.52, blue: 0.87, alpha: 1)
+                light: UIColor(red: 0.6, green: 0.65, blue: 0.91, alpha: 1),
+                dark: UIColor(red: 0.6, green: 0.65, blue: 0.91, alpha: 1)
             )
         }
     }
@@ -55,6 +54,38 @@ enum Colors {
             return color(
                 light: UIColor(red: 0.2, green: 0.31, blue: 0.82, alpha: 1),
                 dark: UIColor(red: 0.2, green: 0.31, blue: 0.82, alpha: 1)
+            )
+        }
+        static var mdocBlueRenew: UIColor {
+            return color(
+                light: UIColor(red: 0.44, green: 0.52, blue: 0.87, alpha: 1),
+                dark: UIColor(red: 0.44, green: 0.52, blue: 0.87, alpha: 1)
+            )
+        }
+    }
+    enum Default {
+        static var gray1: UIColor {
+            return color(
+                light: UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1),
+                dark: UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+            )
+        }
+        static var gray4: UIColor {
+            return color(
+                light: UIColor(red: 0.74, green: 0.74, blue: 0.74, alpha: 1),
+                dark: UIColor(red: 0.74, green: 0.74, blue: 0.74, alpha: 1)
+            )
+        }
+        static var gray6: UIColor {
+            return color(
+                light: UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1),
+                dark: UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+            )
+        }
+        static var gray7: UIColor {
+            return color(
+                light: UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1),
+                dark: UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1)
             )
         }
     }

@@ -127,6 +127,7 @@ PODS:
   - PromisesObjC (2.0.0)
   - SnapKit (5.0.1)
   - Then (2.7.0)
+  - YoutubePlayer-in-WKWebView (0.3.8)
 
 DEPENDENCIES:
   - Amplify
@@ -135,6 +136,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - SnapKit (~> 5.0.0)
   - Then
+  - YoutubePlayer-in-WKWebView (~> 0.3.0)
 
 SPEC REPOS:
   trunk:
@@ -159,6 +161,7 @@ SPEC REPOS:
     - PromisesObjC
     - SnapKit
     - Then
+    - YoutubePlayer-in-WKWebView
 
 SPEC CHECKSUMS:
   Amplify: fb33852ceec9ab2f6683495d02715fa418314883
@@ -182,7 +185,8 @@ SPEC CHECKSUMS:
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  YoutubePlayer-in-WKWebView: 4fca3b4f6f09940077bfbae7bddb771f2b43aacd
 
-PODFILE CHECKSUM: 4fd0f38b63510d1e12df9f8e56e3e72b04d265f5
+PODFILE CHECKSUM: 65bfb4420391a96d51e67613ab1676e3145a4e4e
 
 COCOAPODS: 1.11.3
