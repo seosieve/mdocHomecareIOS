@@ -12,7 +12,6 @@ import SnapKit
 class HomeViewController: UIViewController {
     let maxHeight: CGFloat = 228 + window.safeAreaInsets.top
     let minHeight: CGFloat = 128 + window.safeAreaInsets.top
-    var contentInset: UIEdgeInsets? = nil
     
     let sectionHeader = ["2022년 8월", "2022년 9월", "2022년 10월"]
     //LightMode 변경
@@ -20,13 +19,10 @@ class HomeViewController: UIViewController {
         .lightContent
     }
     
-    lazy var scheduleScrollView: UIScrollView = {
-        let scheduleScrollView = UIScrollView()
-//        scheduleScrollView.backgroundColor = .yellow
-        scheduleScrollView.contentInset = UIEdgeInsets(top: 228, left: 0, bottom: 0, right: 0)
-        scheduleScrollView.contentOffset = CGPoint(x: 0, y: 228)
-        return scheduleScrollView
-    }()
+    var scheduleScrollView = UIScrollView().then {
+        $0.contentInset = UIEdgeInsets(top: 228, left: 0, bottom: 0, right: 0)
+        $0.scrollIndicatorInsets = $0.contentInset
+    }
     
     var scheduleContentView = UIView()
     
@@ -261,9 +257,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - UIScrollView
 extension HomeViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.y)
+        let level = maxHeight + scrollView.contentOffset.y
+        print(level)
         if scrollView.contentOffset.y > -maxHeight {
-            let level = maxHeight + scrollView.contentOffset.y
             topSheetView.snp.updateConstraints { make in
                 make.height.equalTo(max(-scrollView.contentOffset.y, minHeight))
             }

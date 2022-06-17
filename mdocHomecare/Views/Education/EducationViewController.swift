@@ -22,9 +22,15 @@ class EducationViewController: UIViewController {
 //        button.addTarget(self, action: #selector(didTabButton), for: .touchUpInside)
 //        return button
 //    }()
+    let maxHeight = 117 + window.safeAreaInsets.top
+    let width1 = 0.0
+    
+    var statusbarContainerView = UIView().then {
+        $0.backgroundColor = Colors.Layout.I0
+    }
     
     var educationTitleView = UIView().then {
-        $0.backgroundColor = .orange
+        $0.backgroundColor = Colors.Layout.I0
     }
     
     var educationTitleLabel = UILabel().then {
@@ -37,34 +43,33 @@ class EducationViewController: UIViewController {
         $0.backgroundColor = .green
     }
     
-    var educationTableView = UITableView().then {
-        $0.backgroundColor = .cyan
+    var hashTagStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 8
+        $0.distribution = .equalSpacing
     }
     
+    var hashTag1 = UIButton().then {
+        $0.backgroundColor = .blue
+        $0.setTitle("sex", for: .normal)
+        $0.titleLabel?.font = UIFont(font: FontFamily.SFProText.regular, size: 14)
+    }
     
-//    var youtubeView1 = WKYTPlayerView().then {
-//        $0.backgroundColor = .orange
-//        $0.layer.masksToBounds = true
-//        $0.layer.cornerRadius = 10
-//    }
-//    
-//    var youtubeView2 = WKYTPlayerView().then {
-//        $0.backgroundColor = .orange
-//        $0.layer.masksToBounds = true
-//        $0.layer.cornerRadius = 10
-//    }
-//    
-//    var youtubeView3 = WKYTPlayerView().then {
-//        $0.backgroundColor = .orange
-//        $0.layer.masksToBounds = true
-//        $0.layer.cornerRadius = 10
-//    }
+    var hashTag2 = UIButton().then {
+        $0.backgroundColor = .blue
+        $0.setTitle("sexsaa", for: .normal)
+    }
+    
+    var educationTableView = UITableView().then {
+        $0.backgroundColor = .cyan
+        $0.contentInset = UIEdgeInsets(top: 117, left: 0, bottom: 0, right: 0)
+        $0.scrollIndicatorInsets = $0.contentInset
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.title = "dawdaw"
+        self.navigationController?.navigationBar.isHidden = true
         educationTableView.delegate = self
         educationTableView.dataSource = self
         educationTableView.register(EducationTableViewCell.self, forCellReuseIdentifier: "educationTableViewCell")
@@ -82,15 +87,29 @@ class EducationViewController: UIViewController {
 //        notiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 //        notiButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
+        view.addSubview(educationTableView)
         
+        view.addSubview(statusbarContainerView)
         view.addSubview(educationTitleView)
         educationTitleView.addSubview(educationTitleLabel)
         view.addSubview(hashTagView)
+        hashTagView.addSubview(hashTagStackView)
+        hashTagStackView.addArrangedSubview(hashTag1)
+        hashTagStackView.addArrangedSubview(hashTag2)
         
-        view.addSubview(educationTableView)
+        educationTableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        statusbarContainerView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.height.equalTo(window.safeAreaInsets.top + 20)
+            make.width.equalTo(view.bounds.width)
+            make.centerX.equalToSuperview()
+        }
         
         educationTitleView.snp.makeConstraints { make in
-            make.top.equalTo(window.safeAreaInsets.top+20)
+            make.top.equalTo(window.safeAreaInsets.top + 20)
             make.height.equalTo(41)
             make.width.equalTo(view.bounds.width)
             make.centerX.equalToSuperview()
@@ -108,39 +127,12 @@ class EducationViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         
-        educationTableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        hashTagStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.height.equalTo(36)
+            make.left.equalToSuperview().inset(24)
+            make.centerX.equalToSuperview()
         }
-        
-        
-//        view.addSubview(youtubeView1)
-//        view.addSubview(youtubeView2)
-//        view.addSubview(youtubeView3)
-//
-//        youtubeView1.snp.makeConstraints { make in
-//            make.height.equalTo(210)
-//            make.centerX.equalToSuperview()
-//            make.left.equalToSuperview().inset(30)
-//            make.top.equalToSuperview().offset(120)
-//        }
-//
-//        youtubeView2.snp.makeConstraints { make in
-//            make.height.equalTo(210)
-//            make.centerX.equalToSuperview()
-//            make.left.equalToSuperview().inset(30)
-//            make.top.equalTo(youtubeView1.snp.bottom).offset(20)
-//        }
-//
-//        youtubeView3.snp.makeConstraints { make in
-//            make.height.equalTo(210)
-//            make.centerX.equalToSuperview()
-//            make.left.equalToSuperview().inset(30)
-//            make.top.equalTo(youtubeView2.snp.bottom).offset(20)
-//        }
-//
-//        youtubeView1.load(withVideoId: "psL_5RIBqnY")
-//        youtubeView2.load(withVideoId: "psL_5RIBqnY")
-//        youtubeView3.load(withVideoId: "psL_5RIBqnY")
     }
         
     //MARK: - Notification
@@ -188,11 +180,25 @@ extension EducationViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "educationTableViewCell", for: indexPath) as! EducationTableViewCell
-        
         return cell
     }
     
-
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let level = maxHeight+scrollView.contentOffset.y
+        print(level)
+//        print(hashTag1.titleLabel?.text?.size(withAttributes: [NSAttributedString.Key.font : FontFamily.SFProText.regular]).height)
+        if level > 0 {
+            educationTitleView.snp.updateConstraints { make in
+                make.height.equalTo(max(41 - level,0))
+            }
+            educationTitleLabel.alpha = 1 - (level*0.04)
+        } else {
+            educationTitleView.snp.updateConstraints { make in
+                make.height.equalTo(41)
+            }
+            educationTitleLabel.alpha = 1
+        }
+    }
 }
 
 
