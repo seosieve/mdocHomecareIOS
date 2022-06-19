@@ -23,7 +23,7 @@ class EducationViewController: UIViewController {
 //        return button
 //    }()
     let maxHeight = 117 + window.safeAreaInsets.top
-    var hashTagArr = [UIButton]()
+    var hashTagArr = ["전체", "#일반 사항", "#합병증", "#주제", "#어쩌구", "#저쩌구"]
     
     var statusbarContainerView = UIView().then {
         $0.backgroundColor = Colors.Layout.I0
@@ -40,11 +40,11 @@ class EducationViewController: UIViewController {
     }
     
     var hashTagView = UIView().then {
-        $0.backgroundColor = .green
+        $0.backgroundColor = Colors.Layout.I0
     }
     
     var hashTagScrollView = UIScrollView().then {
-        $0.backgroundColor = .red
+        $0.showsHorizontalScrollIndicator = false
     }
     
     var contentView = UIView()
@@ -56,7 +56,7 @@ class EducationViewController: UIViewController {
     }
     
     var educationTableView = UITableView().then {
-        $0.backgroundColor = .cyan
+//        $0.backgroundColor = .cyan
         $0.contentInset = UIEdgeInsets(top: 117, left: 0, bottom: 0, right: 0)
         $0.scrollIndicatorInsets = $0.contentInset
     }
@@ -78,7 +78,13 @@ class EducationViewController: UIViewController {
 //    }
     
     @objc func hashTagSelected(_ sender: UIButton) {
-        print(sender)
+        let index = hashTagStackView.arrangedSubviews.firstIndex(of: sender)!
+        if sender.isSelected {
+            sender.isSelected = false
+        } else {
+            sender.isSelected = true
+        }
+        print(hashTagArr[Int(index)])
     }
     
     func setViews() {
@@ -87,7 +93,6 @@ class EducationViewController: UIViewController {
 //        notiButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
         view.addSubview(educationTableView)
-        
         view.addSubview(statusbarContainerView)
         view.addSubview(educationTitleView)
         educationTitleView.addSubview(educationTitleLabel)
@@ -95,21 +100,6 @@ class EducationViewController: UIViewController {
         hashTagView.addSubview(hashTagScrollView)
         hashTagScrollView.addSubview(contentView)
         contentView.addSubview(hashTagStackView)
-        
-        for _ in 1..<10 {
-            lazy var hashTag = UIButton().then {
-                $0.backgroundColor = Colors.Semantic.mdocBlue
-                $0.setTitle("전체", for: .normal)
-                $0.titleLabel?.textColor = Colors.Layout.I0
-                $0.titleLabel?.font = UIFont(font: FontFamily.SFProText.regular, size: 14)
-                $0.addTarget(self, action: #selector(hashTagSelected(_:)), for: .touchUpInside)
-            }
-            hashTag.snp.makeConstraints { make in
-                make.width.equalTo(70)
-            }
-            hashTagStackView.addArrangedSubview(hashTag)
-
-        }
         
         educationTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -157,6 +147,27 @@ class EducationViewController: UIViewController {
             make.height.equalToSuperview()
             make.centerY.equalToSuperview()
             make.left.right.equalToSuperview()
+        }
+        
+        for index in 0..<6 {
+            lazy var hashTag = UIButton().then {
+                $0.setBackgroundColor(Colors.Layout.I20, for: .normal)
+                $0.setBackgroundColor(Colors.Semantic.mdocBlue, for: .selected)
+                $0.setTitleColor(Colors.Default.gray1, for: .normal)
+                $0.setTitleColor(Colors.Layout.I0, for: .selected)
+                $0.setTitle(hashTagArr[index], for: .normal)
+                $0.titleLabel?.font = UIFont(font: FontFamily.SFProText.regular, size: 14)
+                $0.layer.masksToBounds = true
+                $0.layer.cornerRadius = 18
+                if index == 0 {
+                    $0.isSelected = true
+                }
+                $0.addTarget(self, action: #selector(hashTagSelected(_:)), for: .touchUpInside)
+            }
+            hashTag.snp.makeConstraints { make in
+                make.width.equalTo(hashTag.intrinsicContentSize.width + 20)
+            }
+            hashTagStackView.addArrangedSubview(hashTag)
         }
     }
         
