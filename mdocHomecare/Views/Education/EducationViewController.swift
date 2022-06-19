@@ -23,7 +23,7 @@ class EducationViewController: UIViewController {
 //        return button
 //    }()
     let maxHeight = 117 + window.safeAreaInsets.top
-    let width1 = 0.0
+    var hashTagArr = [UIButton]()
     
     var statusbarContainerView = UIView().then {
         $0.backgroundColor = Colors.Layout.I0
@@ -43,21 +43,16 @@ class EducationViewController: UIViewController {
         $0.backgroundColor = .green
     }
     
+    var hashTagScrollView = UIScrollView().then {
+        $0.backgroundColor = .red
+    }
+    
+    var contentView = UIView()
+    
     var hashTagStackView = UIStackView().then {
         $0.axis = .horizontal
-        $0.spacing = 8
         $0.distribution = .equalSpacing
-    }
-    
-    var hashTag1 = UIButton().then {
-        $0.backgroundColor = .blue
-        $0.setTitle("sex", for: .normal)
-        $0.titleLabel?.font = UIFont(font: FontFamily.SFProText.regular, size: 14)
-    }
-    
-    var hashTag2 = UIButton().then {
-        $0.backgroundColor = .blue
-        $0.setTitle("sexsaa", for: .normal)
+        $0.spacing = 8
     }
     
     var educationTableView = UITableView().then {
@@ -82,6 +77,10 @@ class EducationViewController: UIViewController {
 //        sendNotification(seconds: 2)
 //    }
     
+    @objc func hashTagSelected(_ sender: UIButton) {
+        print(sender)
+    }
+    
     func setViews() {
 //        view.addSubview(notiButton)
 //        notiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -93,9 +92,24 @@ class EducationViewController: UIViewController {
         view.addSubview(educationTitleView)
         educationTitleView.addSubview(educationTitleLabel)
         view.addSubview(hashTagView)
-        hashTagView.addSubview(hashTagStackView)
-        hashTagStackView.addArrangedSubview(hashTag1)
-        hashTagStackView.addArrangedSubview(hashTag2)
+        hashTagView.addSubview(hashTagScrollView)
+        hashTagScrollView.addSubview(contentView)
+        contentView.addSubview(hashTagStackView)
+        
+        for _ in 1..<10 {
+            lazy var hashTag = UIButton().then {
+                $0.backgroundColor = Colors.Semantic.mdocBlue
+                $0.setTitle("전체", for: .normal)
+                $0.titleLabel?.textColor = Colors.Layout.I0
+                $0.titleLabel?.font = UIFont(font: FontFamily.SFProText.regular, size: 14)
+                $0.addTarget(self, action: #selector(hashTagSelected(_:)), for: .touchUpInside)
+            }
+            hashTag.snp.makeConstraints { make in
+                make.width.equalTo(70)
+            }
+            hashTagStackView.addArrangedSubview(hashTag)
+
+        }
         
         educationTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -127,11 +141,22 @@ class EducationViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         
-        hashTagStackView.snp.makeConstraints { make in
+        hashTagScrollView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.height.equalTo(36)
             make.left.equalToSuperview().inset(24)
             make.centerX.equalToSuperview()
+        }
+        
+        contentView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.height.equalToSuperview()
+        }
+        
+        hashTagStackView.snp.makeConstraints { make in
+            make.height.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.left.right.equalToSuperview()
         }
     }
         
