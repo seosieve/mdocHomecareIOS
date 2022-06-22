@@ -23,7 +23,8 @@ class EducationViewController: UIViewController {
 //        return button
 //    }()
     let maxHeight = 117 + window.safeAreaInsets.top
-    var hashTagArr = ["전체", "#일반 사항", "#합병증", "#주제", "#어쩌구", "#저쩌구"]
+    let hashTagArr = ["전체", "#일반 사항", "#합병증", "#주제", "#어쩌구", "#저쩌구"]
+    var selectedHashTagArr = ["전체"]
     
     var statusbarContainerView = UIView().then {
         $0.backgroundColor = Colors.Layout.I0
@@ -58,6 +59,7 @@ class EducationViewController: UIViewController {
     var educationTableView = UITableView().then {
 //        $0.backgroundColor = .cyan
         $0.contentInset = UIEdgeInsets(top: 117, left: 0, bottom: 0, right: 0)
+        $0.separatorStyle = .none
         $0.scrollIndicatorInsets = $0.contentInset
     }
     
@@ -78,13 +80,33 @@ class EducationViewController: UIViewController {
 //    }
     
     @objc func hashTagSelected(_ sender: UIButton) {
-        let index = hashTagStackView.arrangedSubviews.firstIndex(of: sender)!
-        if sender.isSelected {
-            sender.isSelected = false
+        let index = Int(hashTagStackView.arrangedSubviews.firstIndex(of: sender)!)
+        if index == 0 {
+            if !sender.isSelected {
+                for view in hashTagStackView.arrangedSubviews {
+                    (view as! UIButton).isSelected = false
+                }
+                sender.isSelected = true
+                selectedHashTagArr = ["전체"]
+            }
         } else {
-            sender.isSelected = true
+            if selectedHashTagArr.first == "전체" {
+                (hashTagStackView.viewWithTag(1) as! UIButton).isSelected = false
+                selectedHashTagArr.removeFirst()
+                sender.isSelected = true
+                selectedHashTagArr.append(hashTagArr[index])
+            } else {
+                if sender.isSelected {
+                    sender.isSelected = false
+                    let rm = selectedHashTagArr.firstIndex(of: hashTagArr[index])!
+                    selectedHashTagArr.remove(at: rm)
+                } else {
+                    sender.isSelected = true
+                    selectedHashTagArr.append(hashTagArr[index])
+                }
+            }
         }
-        print(hashTagArr[Int(index)])
+        print(selectedHashTagArr)
     }
     
     func setViews() {
@@ -160,6 +182,7 @@ class EducationViewController: UIViewController {
                 $0.layer.masksToBounds = true
                 $0.layer.cornerRadius = 18
                 if index == 0 {
+                    $0.tag = 1
                     $0.isSelected = true
                 }
                 $0.addTarget(self, action: #selector(hashTagSelected(_:)), for: .touchUpInside)
