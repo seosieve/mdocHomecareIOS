@@ -8,10 +8,10 @@
 import UIKit
 import UserNotifications
 
-
 class EducationViewController: UIViewController {
 
     let userNotificationCenter = UNUserNotificationCenter.current()
+    
 //    lazy var notiButton: UIButton = {
 //        let button = UIButton()
 //        button.setTitle("LocalNoti", for: .normal)
@@ -57,7 +57,6 @@ class EducationViewController: UIViewController {
     }
     
     var educationTableView = UITableView().then {
-//        $0.backgroundColor = .cyan
         $0.contentInset = UIEdgeInsets(top: 117, left: 0, bottom: 0, right: 0)
         $0.separatorStyle = .none
         $0.scrollIndicatorInsets = $0.contentInset
@@ -70,7 +69,9 @@ class EducationViewController: UIViewController {
         educationTableView.delegate = self
         educationTableView.dataSource = self
         educationTableView.register(EducationTableViewCell.self, forCellReuseIdentifier: "educationTableViewCell")
+//        educationTableView.estimatedRowHeight = 1300
         setViews()
+        educationTableView.rowHeight = UITableView.automaticDimension
     }
     
 //    @objc private func didTabButton() {
@@ -113,7 +114,6 @@ class EducationViewController: UIViewController {
 //        view.addSubview(notiButton)
 //        notiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 //        notiButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        
         view.addSubview(educationTableView)
         view.addSubview(statusbarContainerView)
         view.addSubview(educationTitleView)
@@ -233,19 +233,15 @@ extension EducationViewController: UITableViewDelegate, UITableViewDataSource {
         return 5
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "educationTableViewCell", for: indexPath) as! EducationTableViewCell
+        cell.selectionStyle = .none
         return cell
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let level = maxHeight+scrollView.contentOffset.y
         print(level)
-//        print(hashTag1.titleLabel?.text?.size(withAttributes: [NSAttributedString.Key.font : FontFamily.SFProText.regular]).height)
         if level > 0 {
             educationTitleView.snp.updateConstraints { make in
                 make.height.equalTo(max(41 - level,0))
@@ -259,5 +255,3 @@ extension EducationViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-
-

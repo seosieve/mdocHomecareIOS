@@ -17,13 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let userHasLoggedIn: Bool = false
         //Login 안헀을 때 VC
         let startViewController = StartViewController()
+        let navigationController = UINavigationController(rootViewController: startViewController)
         //Login 했을 때 VC
         let homeViewController = TabBarController()
         
-        let detailViewController = DetailViewController()
-        
-        let vc = userHasLoggedIn ? homeViewController : startViewController
-        window?.rootViewController = homeViewController
+        let vc = userHasLoggedIn ? homeViewController : navigationController
+        window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }
 

@@ -19,6 +19,9 @@ class EducationTableViewCell: UITableViewCell {
     
     var playtimeLabel = UILabel().then {
         $0.backgroundColor = Colors.Layout.I100.withAlphaComponent(0.7)
+        $0.textColor = Colors.Layout.I0
+        $0.font = UIFont(font: FontFamily.SFProText.regular, size: 13)
+        $0.textAlignment = .center
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 6
         $0.text = "00:00"
@@ -31,10 +34,15 @@ class EducationTableViewCell: UITableViewCell {
     }
     
     var subtitleLable = UILabel().then {
-        $0.text = "신장이 하는 일, 만성 신부전 개념"
+        $0.font = UIFont(font: FontFamily.SFProText.regular, size: 14)
+        $0.textColor = Colors.Layout.I100
+        $0.numberOfLines = 0
+        $0.text = "신장이 하는 일, 만성 dkamw;dka;wdkwakdakwdkwa신부전 개념"
     }
     
     var hashTagLable = UILabel().then {
+        $0.font = UIFont(font: FontFamily.SFProText.regular, size: 14)
+        $0.textColor = Colors.Text.subContent
         $0.text = "#일반 사항"
     }
     
@@ -72,8 +80,8 @@ class EducationTableViewCell: UITableViewCell {
         playtimeLabel.snp.makeConstraints { make in
             make.width.equalTo(49)
             make.height.equalTo(28)
-            make.right.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.right.equalTo(educationVideoView.snp.right).inset(12)
+            make.bottom.equalTo(educationVideoView.snp.bottom).inset(12)
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -81,8 +89,17 @@ class EducationTableViewCell: UITableViewCell {
             make.top.equalTo(educationVideoView.snp.bottom).offset(12)
         }
         
+        subtitleLable.snp.makeConstraints { make in
+            make.left.equalTo(educationVideoView.snp.left)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+        }
         
-        
+        hashTagLable.snp.makeConstraints { make in
+            make.left.equalTo(educationVideoView.snp.left)
+            make.top.equalTo(subtitleLable.snp.bottom).offset(8)
+            make.bottom.equalToSuperview().inset(24)
+        }
         
         educationVideoView.load(withVideoId: "ldC6qoCfHRI")
     }

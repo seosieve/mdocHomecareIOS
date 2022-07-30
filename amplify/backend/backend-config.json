@@ -1,13 +1,15 @@
 {
   "auth": {
-    "mdochomecareb2058780": {
+    "mdochomecare2893848c2893848c": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
         "socialProviders": [],
-        "usernameAttributes": [],
+        "usernameAttributes": [
+          "PHONE_NUMBER"
+        ],
         "signupAttributes": [
           "EMAIL"
         ],
@@ -15,7 +17,7 @@
           "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": []
         },
-        "mfaConfiguration": "OFF",
+        "mfaConfiguration": "ON",
         "mfaTypes": [
           "SMS"
         ],

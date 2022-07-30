@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  LoginViewController.swift
 //  mdocHomecare
 //
 //  Created by 서충원 on 2022/04/17.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     lazy var textField: UITextField = {
         let width = 250
@@ -26,18 +26,18 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.navigationController?.navigationBar.tintColor = Colors.Text.mainContent
+        self.navigationController?.navigationBar.topItem?.title = ""
         setViews()
     }
     
-    
     func setViews() {
         self.view.addSubview(textField)
-        
     }
 }
 
 //MARK: - UITextFieldDelegate
-extension DetailViewController: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) { print("textFieldDidBeginEditing: \((textField.text) ?? "Empty")") }
     
 }

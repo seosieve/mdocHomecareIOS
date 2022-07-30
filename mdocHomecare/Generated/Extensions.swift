@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - safeArea Detect
 let window: UIWindow = {
     let scenes = UIApplication.shared.connectedScenes
     let windowScene = scenes.first as? UIWindowScene
@@ -34,5 +35,16 @@ extension UIButton {
     }
 }
 
+//MARK: - LineSpacing
+extension UILabel {
+    func addLineSpacing(_ spacingValue: CGFloat = 2) {
+        guard let textString = text else { return }
+        let attributedString = NSMutableAttributedString(string: textString)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = spacingValue
+        attributedString.addAttributes([.paragraphStyle: paragraphStyle], range: NSRange(location: 0, length: attributedString.length))
+        attributedText = attributedString
+    }
+}
 
 

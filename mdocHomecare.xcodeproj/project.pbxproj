@@ -14,7 +14,7 @@
 		4E19061627FABE1200C52EE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E19061427FABE1200C52EE6 /* LaunchScreen.storyboard */; };
 		4E546989285B5B190028F146 /* EducationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E546988285B5B190028F146 /* EducationTableViewCell.swift */; };
 		4E7E0D47280BF4430045E50C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D46280BF4430045E50C /* HomeViewController.swift */; };
-		4E7E0D49280BF8240045E50C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D48280BF8240045E50C /* DetailViewController.swift */; };
+		4E7E0D49280BF8240045E50C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D48280BF8240045E50C /* LoginViewController.swift */; };
 		4E7E0D4B280D431B0045E50C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D4A280D431B0045E50C /* TabBarController.swift */; };
 		4E7E0D4D280D44720045E50C /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D4C280D44720045E50C /* EducationViewController.swift */; };
 		4E7E0D4F280D44A80045E50C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7E0D4E280D44A80045E50C /* SettingController.swift */; };
@@ -43,7 +43,7 @@
 		4E43686B2859EBDE00BEDD07 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		4E546988285B5B190028F146 /* EducationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationTableViewCell.swift; sourceTree = "<group>"; };
 		4E7E0D46280BF4430045E50C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		4E7E0D48280BF8240045E50C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4E7E0D48280BF8240045E50C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4E7E0D4A280D431B0045E50C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4E7E0D4C280D44720045E50C /* EducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
 		4E7E0D4E280D44A80045E50C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				4E19060D27FABE1000C52EE6 /* StartViewController.swift */,
-				4E7E0D48280BF8240045E50C /* DetailViewController.swift */,
+				4E7E0D48280BF8240045E50C /* LoginViewController.swift */,
 				4E7E0D4A280D431B0045E50C /* TabBarController.swift */,
 				4EFCC82F283E2B2700A36BB0 /* Home */,
 				4E546987285B5AF30028F146 /* Education */,
@@ -358,7 +358,7 @@
 				4EBC50782830D1E800CCEA94 /* Fonts+Generated.swift in Sources */,
 				4E546989285B5B190028F146 /* EducationTableViewCell.swift in Sources */,
 				4EBC5068281FB30500CCEA94 /* Colors+Generated.swift in Sources */,
-				4E7E0D49280BF8240045E50C /* DetailViewController.swift in Sources */,
+				4E7E0D49280BF8240045E50C /* LoginViewController.swift in Sources */,
 				4E7E0D4B280D431B0045E50C /* TabBarController.swift in Sources */,
 				4EBC508328311FE700CCEA94 /* Extensions.swift in Sources */,
 				4E19060C27FABE1000C52EE6 /* SceneDelegate.swift in Sources */,

@@ -16,93 +16,112 @@ class StartViewController: UIViewController {
 
     let userNotificationCenter = UNUserNotificationCenter.current()
     
-    lazy var mdocLogo = UIImageView().then {
-        $0.image = Asset.logoHc.image
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
     }
     
-    lazy var backgroundImage = UIImageView().then {
+    var mdocLogo = UIImageView().then {
+        $0.image = Asset.logoHc.image
+        $0.alpha = 0
+    }
+    
+    var backgroundImage = UIImageView().then {
         $0.image = Asset.startImg.image
     }
     
-    lazy var mainLabel = UILabel().then {
+    var mainLabel = UILabel().then {
         $0.text = "환자•보호자용"
+        $0.alpha = 0
         $0.font = UIFont(font: FontFamily.SFProText.bold, size: 18)
         $0.textColor = Colors.Text.mainContent.withAlphaComponent(0.3)
     }
     
-    lazy var subLabel = UILabel().then {
+    var subLabel = UILabel().then {
         $0.numberOfLines = 0
-        $0.textAlignment = .center
+        $0.alpha = 0
         $0.text = "환자분의 건강관리를\n더욱 효과적으로 도와드리겠습니다"
+        $0.addLineSpacing(5)
+        $0.textAlignment = .center
         $0.font = UIFont(font: FontFamily.SFProText.regular, size: 16)
         $0.textColor = Colors.Text.mainContent
     }
     
     lazy var startButton = UIButton().then {
         $0.backgroundColor = Colors.Semantic.mdocBlue
+        $0.alpha = 0
         $0.setTitle("시작하기", for: .normal)
         $0.titleLabel?.font = UIFont(font: FontFamily.SFProText.regular, size: 16)
         $0.titleLabel?.textColor = Colors.Layout.I0
         $0.addTarget(self, action: #selector(didTabButton), for: .touchUpInside)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        UIApplication.shared.statusBarStyle = .lightContent
+    @objc private func didTabButton() {
+        let vc = LoginViewController()
+        vc.navigationItem.backButtonTitle = " "
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Colors.Layout.I0
         setViews()
-    }
-    
-    @objc private func didTabButton() {
-        print("touch")
-        let vc = DetailViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        fadeInAnimation()
+        signUp(username: "+8201022922044", password: "12345678", email: "royalcircle97@naver.com", phonenumber: "+8201022922044")
     }
     
     func setViews() {
-        
-        let screenSize = UIScreen.main.bounds
-        
-        
         self.view.addSubview(mdocLogo)
         mdocLogo.snp.makeConstraints { make in
             make.height.equalTo(96)
             make.width.equalTo(200)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(60*screenSize.width/100)
+            let width = UIScreen.main.bounds.width
+            make.top.equalToSuperview().inset(width*0.6)
         }
     
         self.view.addSubview(backgroundImage)
         backgroundImage.snp.makeConstraints { make in
-            make.width.equalTo(screenSize.width)
+            make.width.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
-//        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
-//        backgroundImage.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
-//        backgroundImage.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
         self.view.addSubview(mainLabel)
-        mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        mainLabel.topAnchor.constraint(equalTo: mdocLogo.bottomAnchor, constant: 25).isActive = true
-        mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        mainLabel.snp.makeConstraints { make in
+            make.top.equalTo(mdocLogo.snp.bottom).offset(25)
+            make.centerX.equalToSuperview()
+        }
         
         self.view.addSubview(subLabel)
-        subLabel.translatesAutoresizingMaskIntoConstraints = false
-        subLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 24).isActive = true
-        subLabel.centerXAnchor.constraint(equalTo: mainLabel.centerXAnchor).isActive = true
+        subLabel.snp.makeConstraints { make in
+            make.top.equalTo(mainLabel.snp.bottom).offset(24)
+            make.centerX.equalToSuperview()
+        }
         
         self.view.addSubview(startButton)
-        startButton.translatesAutoresizingMaskIntoConstraints = false
-        startButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        startButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
-        startButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        startButton.snp.makeConstraints { make in
+            make.height.equalTo(44)
+            make.centerX.equalToSuperview()
+            make.left.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview().inset(48)
+        }
         startButton.rounded()
+    }
+    
+    func fadeInAnimation() {
+        UIView.animateKeyframes(withDuration: 3, delay: 0) {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/4) {
+                self.mdocLogo.alpha = 1
+            }
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 2/4) {
+                self.mainLabel.alpha = 1
+            }
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 3/4) {
+                self.subLabel.alpha = 1
+            }
+            UIView.addKeyframe(withRelativeStartTime: 1/3, relativeDuration: 1) {
+                self.startButton.alpha = 1
+            }
+        }
     }
     
     //MARK: - Notification
@@ -158,24 +177,48 @@ class StartViewController: UIViewController {
             }
     }
     
-    func signUp(username: String, password: String, email: String) -> AnyCancellable {
-        let userAttributes = [AuthUserAttribute(.email, value: email)]
+    func signUp(username: String, password: String, email: String, phonenumber: String) {
+        let userAttributes = [AuthUserAttribute(.email, value: email), AuthUserAttribute(.phoneNumber, value: phonenumber)]
         let options = AuthSignUpRequest.Options(userAttributes: userAttributes)
-        let sink = Amplify.Auth.signUp(username: username, password: password, options: options)
-            .resultPublisher
-            .sink {
-                if case let .failure(authError) = $0 {
-                    print("An error occurred while registering a user \(authError)")
-                }
-            }
-            receiveValue: { signUpResult in
+        Amplify.Auth.signUp(username: username, password: password, options: options) { result in
+            switch result {
+            case .success(let signUpResult):
                 if case let .confirmUser(deliveryDetails, _) = signUpResult.nextStep {
                     print("Delivery details \(String(describing: deliveryDetails))")
                 } else {
                     print("SignUp Complete")
                 }
-
+            case .failure(let error):
+                print("An error occurred while registering a user \(error)")
             }
-        return sink
+        }
+    }
+    
+    func signUp2(username: String, password: String, email: String) {
+        let userAttributes = [AuthUserAttribute(.email, value: email)]
+        let options = AuthSignUpRequest.Options(userAttributes: userAttributes)
+        Amplify.Auth.signUp(username: username, password: password, options: options) { result in
+            switch result {
+            case .success(let signUpResult):
+                if case let .confirmUser(deliveryDetails, _) = signUpResult.nextStep {
+                    print("Delivery details \(String(describing: deliveryDetails))")
+                } else {
+                    print("SignUp Complete")
+                }
+            case .failure(let error):
+                print("An error occurred while registering a user \(error)")
+            }
+        }
+    }
+    
+    func confirmSignUp(for username: String, with confirmationCode: String) {
+        Amplify.Auth.confirmSignUp(for: username, confirmationCode: confirmationCode) { result in
+            switch result {
+            case .success:
+                print("Confirm signUp succeeded")
+            case .failure(let error):
+                print("An error occurred while confirming sign up \(error)")
+            }
+        }
     }
 }
