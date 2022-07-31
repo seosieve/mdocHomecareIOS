@@ -108,7 +108,7 @@ class StartViewController: UIViewController {
     }
     
     func fadeInAnimation() {
-        UIView.animateKeyframes(withDuration: 3, delay: 0) {
+        UIView.animateKeyframes(withDuration: 2, delay: 0) {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/4) {
                 self.mdocLogo.alpha = 1
             }
