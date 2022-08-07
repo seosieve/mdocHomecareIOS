@@ -24,6 +24,7 @@ extension UIView {
 }
 
 extension UIButton {
+    //MARK: - BackgroundColorForButtonState
     func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {
         UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
         guard let context = UIGraphicsGetCurrentContext() else { return }
@@ -33,10 +34,17 @@ extension UIButton {
         UIGraphicsEndImageContext()
         self.setBackgroundImage(backgroundImage, for: state)
     }
+    //MARK: - ButtonTextUnderLine
+    func setUnderline() {
+        guard let title = title(for: .normal) else { return }
+        let attributedString = NSMutableAttributedString(string: title)
+        attributedString.addAttributes([.underlineStyle: NSUnderlineStyle.single.rawValue], range: NSRange(location: 0, length: title.count))
+        setAttributedTitle(attributedString, for: .normal)
+    }
 }
 
-//MARK: - LineSpacing
 extension UILabel {
+    //MARK: - LineSpacing
     func addLineSpacing(_ spacingValue: CGFloat = 2) {
         guard let textString = text else { return }
         let attributedString = NSMutableAttributedString(string: textString)
@@ -47,4 +55,15 @@ extension UILabel {
     }
 }
 
-
+//MARK: - KeyBoardDownWhenTouched
+extension UIViewController {
+    func hideKeyboardWhenTapped() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}

@@ -42,6 +42,13 @@ enum Colors {
             )
         }
         
+        static var I10: UIColor {
+            return color(
+                light: UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1),
+                dark: UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1)
+            )
+        }
+        
         static var I20: UIColor {
             return color(
                 light: UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1),
