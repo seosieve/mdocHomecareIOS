@@ -57,7 +57,6 @@ class StartViewController: UIViewController {
     
     @objc private func didTabButton() {
         let vc = LoginViewController()
-        vc.navigationItem.backButtonTitle = " "
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -108,7 +107,7 @@ class StartViewController: UIViewController {
     }
     
     func fadeInAnimation() {
-        UIView.animateKeyframes(withDuration: 2, delay: 0) {
+        UIView.animateKeyframes(withDuration: 1.5, delay: 0) {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/4) {
                 self.mdocLogo.alpha = 1
             }

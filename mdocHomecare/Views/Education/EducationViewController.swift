@@ -175,7 +175,7 @@ class EducationViewController: UIViewController {
             lazy var hashTag = UIButton().then {
                 $0.setBackgroundColor(Colors.Layout.I20, for: .normal)
                 $0.setBackgroundColor(Colors.Semantic.mdocBlue, for: .selected)
-                $0.setTitleColor(Colors.Default.gray1, for: .normal)
+                $0.setTitleColor(Colors.Text.mainContent, for: .normal)
                 $0.setTitleColor(Colors.Layout.I0, for: .selected)
                 $0.setTitle(hashTagArr[index], for: .normal)
                 $0.titleLabel?.font = UIFont(font: FontFamily.SFProText.regular, size: 14)

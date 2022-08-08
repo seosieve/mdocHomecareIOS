@@ -78,12 +78,6 @@ enum Colors {
         }
     }
     enum Default {
-        static var gray1: UIColor {
-            return color(
-                light: UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1),
-                dark: UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
-            )
-        }
         static var gray4: UIColor {
             return color(
                 light: UIColor(red: 0.74, green: 0.74, blue: 0.74, alpha: 1),

@@ -10,11 +10,15 @@ import UIKit
 class LoginViewController: UIViewController, UITextViewDelegate {
     
     var loginContainerView = UIView().then {
-        $0.backgroundColor = .white
+        $0.backgroundColor = Colors.Layout.I0
     }
     
     var mdocLogo = UIImageView().then {
         $0.image = Asset.logoSquare.image
+        $0.layer.shadowOffset = CGSize(width: 4, height: 4)
+        $0.layer.shadowOpacity = 0.7
+        $0.layer.shadowRadius = 2
+        $0.layer.shadowColor = Colors.Default.gray4.cgColor
     }
     
     var subLabel = UILabel().then {
@@ -60,15 +64,22 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     }
     
     var passwordTextField = UITextField().then {
+        $0.isSecureTextEntry = true
         $0.font = UIFont(font: FontFamily.SFProText.regular, size: 16)
         $0.attributedPlaceholder = NSAttributedString(string: "ex. ••••••••", attributes: [NSAttributedString.Key.foregroundColor : Colors.Default.gray4])
         $0.textColor = Colors.Text.mainContent
     }
     
-    var findPasswordButton = UIButton().then {
+    lazy var findPasswordButton = UIButton().then {
         $0.setTitle("비밀번호를 잊으셨나요?", for: .normal)
         $0.titleLabel?.font = UIFont(font: FontFamily.SFProText.bold, size: 14)
         $0.setTitleColor(Colors.Semantic.mdocBlue, for: .normal)
+        $0.addTarget(self, action: #selector(findPasswordPressed), for: .touchUpInside)
+    }
+    
+    @objc private func findPasswordPressed() {
+        let vc = FindPasswordViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     lazy var registerButton = UIButton().then {
@@ -81,13 +92,8 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     }
     
     @objc private func registerButtonTapped() {
-        if registerButton.isEnabled {
-            registerButton.isEnabled = false
-            print("aa")
-        } else {
-            registerButton.isEnabled = true
-            print("bb")
-        }
+        let vc = AcceptTermsViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     lazy var startButton = UIButton().then {
@@ -97,6 +103,7 @@ class LoginViewController: UIViewController, UITextViewDelegate {
         $0.setBackgroundColor(Colors.Semantic.mdocBlue, for: .normal)
         $0.setBackgroundColor(Colors.Semantic.mdocBlue.withAlphaComponent(0.3), for: .disabled)
         $0.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
+        $0.isEnabled = false
     }
     
     @objc private func startButtonTapped() {
@@ -249,6 +256,17 @@ class LoginViewController: UIViewController, UITextViewDelegate {
 
 //MARK: - UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) { print("textFieldDidBeginEditing: \((textField.text) ?? "Empty")") }
-    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        let phoneNumberCount = phoneNumberTextField.text?.count ?? 0
+        let passwordCount = passwordTextField.text?.count ?? 0
+        if phoneNumberCount >= 8 && passwordCount >= 8 {
+            UIView.transition(with: registerButton, duration: 2, options: .transitionCrossDissolve, animations: {
+                self.registerButton.isEnabled = false
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+                
+        } else {
+            
+        }
+    }
 }

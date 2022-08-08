@@ -12,13 +12,13 @@ class ScheduleTableViewCell: UITableViewCell {
     let dateLabel = UILabel().then {
         $0.text = "17일"
         $0.font = UIFont(font: FontFamily.SFProText.bold, size: 14)
-        $0.textColor = Colors.Default.gray1
+        $0.textColor = Colors.Text.mainContent
     }
     
     let timeLabel = UILabel().then {
         $0.text = "14:00"
         $0.font = UIFont(font: FontFamily.SFProText.regular, size: 14)
-        $0.textColor = Colors.Default.gray1
+        $0.textColor = Colors.Text.mainContent
     }
     
     let stateLabel = UILabel().then {
