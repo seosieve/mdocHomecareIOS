@@ -40,7 +40,7 @@ class StartViewController: UIViewController {
         $0.numberOfLines = 0
         $0.alpha = 0
         $0.text = "환자분의 건강관리를\n더욱 효과적으로 도와드리겠습니다"
-        $0.addLineSpacing(5)
+        $0.setLineSpacing(5)
         $0.textAlignment = .center
         $0.font = UIFont(font: FontFamily.SFProText.regular, size: 16)
         $0.textColor = Colors.Text.mainContent

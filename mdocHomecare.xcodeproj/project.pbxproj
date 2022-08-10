@@ -10,6 +10,8 @@
 		4E09167528A0FC9400A04FC5 /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09167428A0FC9400A04FC5 /* FindPasswordViewController.swift */; };
 		4E09167728A10E8800A04FC5 /* AcceptTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09167628A10E8800A04FC5 /* AcceptTermsViewController.swift */; };
 		4E09167B28A10EE800A04FC5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09167A28A10EE800A04FC5 /* RegisterViewController.swift */; };
+		4E09167D28A38A5E00A04FC5 /* AcceptTermsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09167C28A38A5E00A04FC5 /* AcceptTermsTableViewCell.swift */; };
+		4E09167F28A3C3F300A04FC5 /* TermDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09167E28A3C3F300A04FC5 /* TermDetailViewController.swift */; };
 		4E19060A27FABE1000C52EE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19060927FABE1000C52EE6 /* AppDelegate.swift */; };
 		4E19060C27FABE1000C52EE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19060B27FABE1000C52EE6 /* SceneDelegate.swift */; };
 		4E19060E27FABE1000C52EE6 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19060D27FABE1000C52EE6 /* StartViewController.swift */; };
@@ -39,6 +41,8 @@
 		4E09167428A0FC9400A04FC5 /* FindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
 		4E09167628A10E8800A04FC5 /* AcceptTermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTermsViewController.swift; sourceTree = "<group>"; };
 		4E09167A28A10EE800A04FC5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4E09167C28A38A5E00A04FC5 /* AcceptTermsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTermsTableViewCell.swift; sourceTree = "<group>"; };
+		4E09167E28A3C3F300A04FC5 /* TermDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermDetailViewController.swift; sourceTree = "<group>"; };
 		4E19060627FABE1000C52EE6 /* mdocHomecare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdocHomecare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E19060927FABE1000C52EE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E19060B27FABE1000C52EE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 				4E7E0D48280BF8240045E50C /* LoginViewController.swift */,
 				4E09167428A0FC9400A04FC5 /* FindPasswordViewController.swift */,
 				4E09167628A10E8800A04FC5 /* AcceptTermsViewController.swift */,
+				4E09167C28A38A5E00A04FC5 /* AcceptTermsTableViewCell.swift */,
+				4E09167E28A3C3F300A04FC5 /* TermDetailViewController.swift */,
 				4E09167A28A10EE800A04FC5 /* RegisterViewController.swift */,
 			);
 			path = Start;
@@ -382,11 +388,13 @@
 				4E7E0D4D280D44720045E50C /* EducationViewController.swift in Sources */,
 				4E09167728A10E8800A04FC5 /* AcceptTermsViewController.swift in Sources */,
 				4E19060A27FABE1000C52EE6 /* AppDelegate.swift in Sources */,
+				4E09167F28A3C3F300A04FC5 /* TermDetailViewController.swift in Sources */,
 				4EBC50782830D1E800CCEA94 /* Fonts+Generated.swift in Sources */,
 				4E546989285B5B190028F146 /* EducationTableViewCell.swift in Sources */,
 				4EBC5068281FB30500CCEA94 /* Colors+Generated.swift in Sources */,
 				4E7E0D49280BF8240045E50C /* LoginViewController.swift in Sources */,
 				4E7E0D4B280D431B0045E50C /* TabBarController.swift in Sources */,
+				4E09167D28A38A5E00A04FC5 /* AcceptTermsTableViewCell.swift in Sources */,
 				4EBC508328311FE700CCEA94 /* Extensions.swift in Sources */,
 				4E19060C27FABE1000C52EE6 /* SceneDelegate.swift in Sources */,
 				4E09167B28A10EE800A04FC5 /* RegisterViewController.swift in Sources */,

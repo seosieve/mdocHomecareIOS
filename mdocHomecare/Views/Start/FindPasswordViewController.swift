@@ -26,7 +26,7 @@ class FindPasswordViewController: UIViewController {
     var subLabel = UILabel().then {
         $0.numberOfLines = 0
         $0.text = "가입시 입력하신 이메일(휴대전화번호)를 인증해주세요\n인증 후 비밀번호를 재설정 하실 수 있습니다"
-        $0.addLineSpacing(5)
+        $0.setLineSpacing(5)
         $0.textAlignment = .center
         $0.font = UIFont(font: FontFamily.SFProText.regular, size: 14)
         $0.textColor = Colors.Text.subContent

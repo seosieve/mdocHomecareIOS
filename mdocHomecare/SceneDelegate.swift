@@ -21,8 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //Login 했을 때 VC
         let homeViewController = TabBarController()
         
+        
+        let vvv = AcceptTermsViewController()
+        
         let vc = userHasLoggedIn ? homeViewController : navigationController
-        window?.rootViewController = vc
+        window?.rootViewController = vvv
         window?.makeKeyAndVisible()
     }
 

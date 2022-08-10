@@ -41,11 +41,20 @@ extension UIButton {
         attributedString.addAttributes([.underlineStyle: NSUnderlineStyle.single.rawValue], range: NSRange(location: 0, length: title.count))
         setAttributedTitle(attributedString, for: .normal)
     }
+    
+    //MARK: - ButtonTextColorRange
+    func setColorRange(_ target: String, _ color: UIColor) {
+        guard let title = title(for: .normal) else { return }
+        let attributedString = NSMutableAttributedString(string: title)
+        let range = (title as NSString).range(of: target)
+        attributedString.addAttributes([.foregroundColor: color], range: range)
+        setAttributedTitle(attributedString, for: .normal)
+    }
 }
 
 extension UILabel {
     //MARK: - LineSpacing
-    func addLineSpacing(_ spacingValue: CGFloat = 2) {
+    func setLineSpacing(_ spacingValue: CGFloat = 2) {
         guard let textString = text else { return }
         let attributedString = NSMutableAttributedString(string: textString)
         let paragraphStyle = NSMutableParagraphStyle()
