@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import RxSwift
+import RxRelay
 
 class AcceptTermsTableViewCell: UITableViewCell {
+    
+    let disposeBag = DisposeBag()
     
     var showTermButtonAction: (() -> ())?
     
@@ -76,7 +80,6 @@ class AcceptTermsTableViewCell: UITableViewCell {
     }
     
     func setViews() {
-        
         contentView.addSubview(termContainerView)
         
         termContainerView.snp.makeConstraints { make in
@@ -107,5 +110,8 @@ class AcceptTermsTableViewCell: UITableViewCell {
             make.width.height.equalTo(24)
             make.right.equalToSuperview().inset(12)
         }
+    }
+    
+    func setupControl() {
     }
 }

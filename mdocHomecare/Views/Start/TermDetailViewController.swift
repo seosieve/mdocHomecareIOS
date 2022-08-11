@@ -62,11 +62,13 @@ class TermDetailViewController: UIViewController, WKUIDelegate, WKNavigationDele
             make.bottom.equalToSuperview().inset(100)
             make.top.left.centerX.equalToSuperview()
         }
-        
-        let url = URL(string: urlString[index!])
-        let request = URLRequest(url: url!)
-        termDetailWebView.load(request)
-        
+//        DispatchQueue.global().async {
+//            let url = URL(string: self.urlString[self.index!])
+//            let request = URLRequest(url: url!)
+//            DispatchQueue.main.async {
+//                self.termDetailWebView.load(request)
+//            }
+//        }
         acceptTermButton.snp.makeConstraints { make in
             make.top.equalTo(termDetailWebView.snp.bottom).offset(20)
             make.height.equalTo(44)

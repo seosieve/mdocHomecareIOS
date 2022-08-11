@@ -6,6 +6,9 @@ target 'mdocHomecare' do
   use_frameworks!
 
   # Pods for mdocHomecare
+  pod 'RxSwift', '~> 6.5'
+  pod 'RxRelay', '~> 6.5'
+  pod 'RxCocoa', '~> 6.5'
   pod 'Amplify'
   pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
   pod 'SnapKit', '~> 5.0.0'

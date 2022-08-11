@@ -12,6 +12,7 @@
 		4E09167B28A10EE800A04FC5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09167A28A10EE800A04FC5 /* RegisterViewController.swift */; };
 		4E09167D28A38A5E00A04FC5 /* AcceptTermsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09167C28A38A5E00A04FC5 /* AcceptTermsTableViewCell.swift */; };
 		4E09167F28A3C3F300A04FC5 /* TermDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09167E28A3C3F300A04FC5 /* TermDetailViewController.swift */; };
+		4E09168128A54C5000A04FC5 /* AcceptTermsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09168028A54C4F00A04FC5 /* AcceptTermsViewModel.swift */; };
 		4E19060A27FABE1000C52EE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19060927FABE1000C52EE6 /* AppDelegate.swift */; };
 		4E19060C27FABE1000C52EE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19060B27FABE1000C52EE6 /* SceneDelegate.swift */; };
 		4E19060E27FABE1000C52EE6 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19060D27FABE1000C52EE6 /* StartViewController.swift */; };
@@ -43,6 +44,7 @@
 		4E09167A28A10EE800A04FC5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4E09167C28A38A5E00A04FC5 /* AcceptTermsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTermsTableViewCell.swift; sourceTree = "<group>"; };
 		4E09167E28A3C3F300A04FC5 /* TermDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermDetailViewController.swift; sourceTree = "<group>"; };
+		4E09168028A54C4F00A04FC5 /* AcceptTermsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTermsViewModel.swift; sourceTree = "<group>"; };
 		4E19060627FABE1000C52EE6 /* mdocHomecare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdocHomecare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E19060927FABE1000C52EE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E19060B27FABE1000C52EE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,22 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		4E09168228A54C6000A04FC5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4E09168328A54C7700A04FC5 /* Start */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4E09168328A54C7700A04FC5 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				4E09168028A54C4F00A04FC5 /* AcceptTermsViewModel.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
 		4E1905FD27FABE1000C52EE6 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +148,7 @@
 			children = (
 				4EBC506A281FBDDE00CCEA94 /* Generated */,
 				4ED891B1281FA8E8007F2C62 /* Assets */,
+				4E09168228A54C6000A04FC5 /* ViewModel */,
 				4E7E0D50280D44BA0045E50C /* Views */,
 				4ED891AB281AC5D1007F2C62 /* mdocHomecare.entitlements */,
 				4E19060927FABE1000C52EE6 /* AppDelegate.swift */,
@@ -398,6 +417,7 @@
 				4EBC508328311FE700CCEA94 /* Extensions.swift in Sources */,
 				4E19060C27FABE1000C52EE6 /* SceneDelegate.swift in Sources */,
 				4E09167B28A10EE800A04FC5 /* RegisterViewController.swift in Sources */,
+				4E09168128A54C5000A04FC5 /* AcceptTermsViewModel.swift in Sources */,
 				4E7E0D4F280D44A80045E50C /* SettingController.swift in Sources */,
 				4EBC506C281FBE2A00CCEA94 /* Assets+Generated.swift in Sources */,
 				4E7E0D47280BF4430045E50C /* HomeViewController.swift in Sources */,
