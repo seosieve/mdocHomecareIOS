@@ -1,30 +1,40 @@
 PODS:
-  - Amplify (1.22.3):
-    - Amplify/Default (= 1.22.3)
-  - Amplify/Default (1.22.3)
-  - AmplifyPlugins/AWSCognitoAuthPlugin (1.22.3):
-    - AWSAuthCore (~> 2.27.0)
-    - AWSCognitoIdentityProvider (~> 2.27.0)
-    - AWSCognitoIdentityProviderASF (~> 2.27.0)
-    - AWSCore (~> 2.27.0)
-    - AWSMobileClient (~> 2.27.0)
-    - AWSPluginsCore (= 1.22.3)
-  - AWSAuthCore (2.27.6):
-    - AWSCore (= 2.27.6)
-  - AWSCognitoIdentityProvider (2.27.6):
-    - AWSCognitoIdentityProviderASF (= 2.27.6)
-    - AWSCore (= 2.27.6)
-  - AWSCognitoIdentityProviderASF (2.27.6):
-    - AWSCore (= 2.27.6)
-  - AWSCore (2.27.6)
-  - AWSMobileClient (2.27.6):
-    - AWSAuthCore (= 2.27.6)
-    - AWSCognitoIdentityProvider (= 2.27.6)
-    - AWSCognitoIdentityProviderASF (= 2.27.6)
-    - AWSCore (= 2.27.6)
-  - AWSPluginsCore (1.22.3):
-    - Amplify (= 1.22.3)
-    - AWSCore (~> 2.27.0)
+  - Amplify (1.28.2):
+    - Amplify/Default (= 1.28.2)
+  - Amplify/Default (1.28.2)
+  - AmplifyPlugins/AWSAPIPlugin (1.28.2):
+    - AppSyncRealTimeClient (~> 2.0)
+    - AWSCore (~> 2.28.0)
+    - AWSPluginsCore (= 1.28.2)
+  - AmplifyPlugins/AWSCognitoAuthPlugin (1.28.2):
+    - AWSAuthCore (~> 2.28.0)
+    - AWSCognitoIdentityProvider (~> 2.28.0)
+    - AWSCognitoIdentityProviderASF (~> 2.28.0)
+    - AWSCore (~> 2.28.0)
+    - AWSMobileClient (~> 2.28.0)
+    - AWSPluginsCore (= 1.28.2)
+  - AmplifyPlugins/AWSDataStorePlugin (1.28.2):
+    - AWSCore (~> 2.28.0)
+    - AWSPluginsCore (= 1.28.2)
+    - SQLite.swift (= 0.13.2)
+  - AppSyncRealTimeClient (2.1.1):
+    - Starscream (~> 4.0.4)
+  - AWSAuthCore (2.28.2):
+    - AWSCore (= 2.28.2)
+  - AWSCognitoIdentityProvider (2.28.2):
+    - AWSCognitoIdentityProviderASF (= 2.28.2)
+    - AWSCore (= 2.28.2)
+  - AWSCognitoIdentityProviderASF (2.28.2):
+    - AWSCore (= 2.28.2)
+  - AWSCore (2.28.2)
+  - AWSMobileClient (2.28.2):
+    - AWSAuthCore (= 2.28.2)
+    - AWSCognitoIdentityProvider (= 2.28.2)
+    - AWSCognitoIdentityProviderASF (= 2.28.2)
+    - AWSCore (= 2.28.2)
+  - AWSPluginsCore (1.28.2):
+    - Amplify (= 1.28.2)
+    - AWSCore (~> 2.28.0)
   - Firebase (8.14.0):
     - Firebase/Core (= 8.14.0)
   - Firebase/Core (8.14.0):
@@ -76,6 +86,7 @@ PODS:
     - GoogleUtilities/Reachability (~> 7.7)
     - GoogleUtilities/UserDefaults (~> 7.7)
     - nanopb (~> 2.30908.0)
+  - FSCalendar (2.8.4)
   - GoogleAppMeasurement (8.14.0):
     - GoogleAppMeasurement/AdIdSupport (= 8.14.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
@@ -132,14 +143,21 @@ PODS:
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
   - SnapKit (5.0.1)
+  - SQLite.swift (0.13.2):
+    - SQLite.swift/standard (= 0.13.2)
+  - SQLite.swift/standard (0.13.2)
+  - Starscream (4.0.4)
   - Then (2.7.0)
   - YoutubePlayer-in-WKWebView (0.3.8)
 
 DEPENDENCIES:
   - Amplify
+  - AmplifyPlugins/AWSAPIPlugin
   - AmplifyPlugins/AWSCognitoAuthPlugin
+  - AmplifyPlugins/AWSDataStorePlugin
   - Firebase
   - Firebase/Messaging
+  - FSCalendar
   - RxCocoa (~> 6.5)
   - RxRelay (~> 6.5)
   - RxSwift (~> 6.5)
@@ -151,6 +169,7 @@ SPEC REPOS:
   trunk:
     - Amplify
     - AmplifyPlugins
+    - AppSyncRealTimeClient
     - AWSAuthCore
     - AWSCognitoIdentityProvider
     - AWSCognitoIdentityProviderASF
@@ -163,6 +182,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseInstallations
     - FirebaseMessaging
+    - FSCalendar
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
@@ -172,24 +192,28 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SnapKit
+    - SQLite.swift
+    - Starscream
     - Then
     - YoutubePlayer-in-WKWebView
 
 SPEC CHECKSUMS:
-  Amplify: fb33852ceec9ab2f6683495d02715fa418314883
-  AmplifyPlugins: 85ce44dc171b07b70a26763fea0a5d48866b722e
-  AWSAuthCore: 09226ae8dfc63d1338f503f53a38af2d3156267e
-  AWSCognitoIdentityProvider: 9eb24a52488d32b75d8550e8a9d1be36229ae47d
-  AWSCognitoIdentityProviderASF: 60d466e143f8bbf9d47d39c1ad58de5044a111b6
-  AWSCore: 0b6fa020f5f343a211862d702ba7a067272a60f7
-  AWSMobileClient: e0ad3787f793d14c593379c2dba006e3bdad8bf1
-  AWSPluginsCore: 21c42bb419ca8dc2afbdefc26096836b99ca61c2
+  Amplify: 5dfd8bdcd41f8a67d96ebd72e5ef1c5aab8500b5
+  AmplifyPlugins: ab878c981d9d51654288d075653a40fe22b27c61
+  AppSyncRealTimeClient: 937360221f2b664c4c33ae142a60643e64f480cd
+  AWSAuthCore: 09b10773154596717583a7ea4e8cf80f7f014d3c
+  AWSCognitoIdentityProvider: fd6ce8429b5cbb22794359424f8bcdf1956aa7c1
+  AWSCognitoIdentityProviderASF: ae23b2c36af3d59622b23d79cea88707662ada6e
+  AWSCore: 1e0cdd5ac2330d02ce019673065791d2b6596293
+  AWSMobileClient: 2fed98a97ee48bf8401bcb1649d32829d5f98962
+  AWSPluginsCore: 0842f0ec7df892adddeea71b05c8e9bee84b2eb0
   Firebase: 7e8fe528c161b9271d365217a74c16aaf834578e
   FirebaseAnalytics: 2fc3876e2eb347673ad2f35e249ae7b15d6c88f5
   FirebaseCore: b84a44ee7ba999e0f9f76d198a9c7f60a797b848
   FirebaseCoreDiagnostics: fd0c8490f34287229c1d6c103d3a55f81ec85712
   FirebaseInstallations: 7d1d967a307c12f1aadd76844fc321cef699b1ce
   FirebaseMessaging: 5ebc42d281567658a2cb72b9ef3506e4a1a1a6e4
+  FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   GoogleAppMeasurement: 71156240babd3cc6ced03e0d54816f01a880c730
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
@@ -199,9 +223,11 @@ SPEC CHECKSUMS:
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SQLite.swift: 4fc2be46c36392e3b87afe6fe7f1801c1daa07ef
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   YoutubePlayer-in-WKWebView: 4fca3b4f6f09940077bfbae7bddb771f2b43aacd
 
-PODFILE CHECKSUM: fe8bb5856bb67dc1f5fd4fab236fc644baf63313
+PODFILE CHECKSUM: 6377a28d1d53ffe857d25a2db4583c61340a938c
 
 COCOAPODS: 1.11.3

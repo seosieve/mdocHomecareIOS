@@ -56,6 +56,13 @@ enum Colors {
             )
         }
         
+        static var I30: UIColor {
+            return color(
+                light: UIColor(red: 0.88, green: 0.88, blue: 0.88, alpha: 1),
+                dark: UIColor(red: 0.88, green: 0.88, blue: 0.88, alpha: 1)
+            )
+        }
+        
         static var I100: UIColor {
             return color(
                 light: UIColor(red: 0, green: 0, blue: 0, alpha: 1),
@@ -76,8 +83,20 @@ enum Colors {
                 dark: UIColor(red: 0.44, green: 0.52, blue: 0.87, alpha: 1)
             )
         }
+        static var warningRed: UIColor {
+            return color(
+                light: UIColor(red: 0.95, green: 0.29, blue: 0.37, alpha: 1),
+                dark: UIColor(red: 0.95, green: 0.29, blue: 0.37, alpha: 1)
+            )
+        }
     }
     enum Default {
+        static var gray2: UIColor {
+            return color(
+                light: UIColor(red: 0.31, green: 0.31, blue: 0.31, alpha: 1),
+                dark: UIColor(red: 0.31, green: 0.31, blue: 0.31, alpha: 1)
+            )
+        }
         static var gray4: UIColor {
             return color(
                 light: UIColor(red: 0.74, green: 0.74, blue: 0.74, alpha: 1),

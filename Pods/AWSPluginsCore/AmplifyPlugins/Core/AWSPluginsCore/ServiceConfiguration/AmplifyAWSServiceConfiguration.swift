@@ -9,11 +9,9 @@ import Foundation
 import AWSCore
 
 public class AmplifyAWSServiceConfiguration: AWSServiceConfiguration {
-    static let version = "1.22.3"
+    static let version = "1.28.2"
 
     override public class func baseUserAgent() -> String! {
-        //TODO: Retrieve this version from a centralized location:
-        //https://github.com/aws-amplify/amplify-ios/issues/276
         let platformInfo = AmplifyAWSServiceConfiguration.platformInformation()
         let systemName = UIDevice.current.systemName.replacingOccurrences(of: " ", with: "-")
         let systemVersion = UIDevice.current.systemVersion
@@ -40,6 +38,10 @@ public class AmplifyAWSServiceConfiguration: AWSServiceConfiguration {
 
     public init(region regionType: AWSRegionType) {
         super.init(region: regionType, credentialsProvider: nil)
+    }
+
+    public init(region regionType: AWSRegionType, endpoint: AWSEndpoint) {
+        super.init(region: regionType, endpoint: endpoint, credentialsProvider: nil)
     }
 
     override public init(region regionType: AWSRegionType,

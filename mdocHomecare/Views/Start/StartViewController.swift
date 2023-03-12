@@ -11,6 +11,7 @@ import SnapKit
 import Amplify
 import Combine
 import UserNotifications
+import Amplify
 
 class StartViewController: UIViewController {
 
@@ -65,7 +66,6 @@ class StartViewController: UIViewController {
         view.backgroundColor = Colors.Layout.I0
         setViews()
         fadeInAnimation()
-        signUp(username: "+8201022922044", password: "12345678", email: "royalcircle97@naver.com", phonenumber: "+8201022922044")
     }
     
     func setViews() {
@@ -148,75 +148,6 @@ class StartViewController: UIViewController {
         userNotificationCenter.add(request) { error in
             if let error = error {
                 print("Notification Error: ", error)
-            }
-        }
-    }
-    
-    //MARK: - AWS Auth
-    func fetchCurrentAuthSession2() {
-        _ = Amplify.Auth.fetchAuthSession { result in
-            switch result {
-            case .success(let session):
-                print("Is user signed in - \(session.isSignedIn)")
-            case .failure(let error):
-                print("Fetch session failed with error \(error)")
-            }
-        }
-    }
-    
-    func fetchCurrentAuthSession() -> AnyCancellable {
-        Amplify.Auth.fetchAuthSession().resultPublisher
-            .sink {
-                if case let .failure(authError) = $0 {
-                    print("Fetch session failed with error \(authError)")
-                }
-            }
-            receiveValue: { session in
-                print("Is user signed in - \(session.isSignedIn)")
-            }
-    }
-    
-    func signUp(username: String, password: String, email: String, phonenumber: String) {
-        let userAttributes = [AuthUserAttribute(.email, value: email), AuthUserAttribute(.phoneNumber, value: phonenumber)]
-        let options = AuthSignUpRequest.Options(userAttributes: userAttributes)
-        Amplify.Auth.signUp(username: username, password: password, options: options) { result in
-            switch result {
-            case .success(let signUpResult):
-                if case let .confirmUser(deliveryDetails, _) = signUpResult.nextStep {
-                    print("Delivery details \(String(describing: deliveryDetails))")
-                } else {
-                    print("SignUp Complete")
-                }
-            case .failure(let error):
-                print("An error occurred while registering a user \(error)")
-            }
-        }
-    }
-    
-    func signUp2(username: String, password: String, email: String) {
-        let userAttributes = [AuthUserAttribute(.email, value: email)]
-        let options = AuthSignUpRequest.Options(userAttributes: userAttributes)
-        Amplify.Auth.signUp(username: username, password: password, options: options) { result in
-            switch result {
-            case .success(let signUpResult):
-                if case let .confirmUser(deliveryDetails, _) = signUpResult.nextStep {
-                    print("Delivery details \(String(describing: deliveryDetails))")
-                } else {
-                    print("SignUp Complete")
-                }
-            case .failure(let error):
-                print("An error occurred while registering a user \(error)")
-            }
-        }
-    }
-    
-    func confirmSignUp(for username: String, with confirmationCode: String) {
-        Amplify.Auth.confirmSignUp(for: username, confirmationCode: confirmationCode) { result in
-            switch result {
-            case .success:
-                print("Confirm signUp succeeded")
-            case .failure(let error):
-                print("An error occurred while confirming sign up \(error)")
             }
         }
     }

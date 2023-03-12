@@ -16,16 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //MARK: - Delay
-        Thread.sleep(forTimeInterval: 1.0)
+//        Thread.sleep(forTimeInterval: 1.0)
         
         //MARK: - Notification
         UNUserNotificationCenter.current().delegate = self
         
-        //MARK: - AWS Amplify
+        //MARK: - AWS API, Amplify, DataStore
         do {
+            let dataStorePlugin = AWSDataStorePlugin(modelRegistration: AmplifyModels())
+            try Amplify.add(plugin: dataStorePlugin)
+            try Amplify.add(plugin: AWSAPIPlugin(modelRegistration: AmplifyModels()))
             try Amplify.add(plugin: AWSCognitoAuthPlugin())
             try Amplify.configure()
+            print("Amplify configured with DataStore plugin")
             print("Amplify configured with auth plugin")
+            print("Amplify configured with API plugin")
         } catch {
             print("Failed to initialize Amplify with \(error)")
         }
@@ -46,7 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: UISceneSession Lifecycle
-
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }

@@ -1,0 +1,85 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "mdochomecarea6f40e9b_identitypool_a6f40e9b",
+    "allowUnauthenticatedIdentities": true,
+    "resourceNameTruncated": "mdochoa6f40e9b",
+    "userPoolName": "mdochomecarea6f40e9b_userpool_a6f40e9b",
+    "autoVerifiedAttributes": [
+      "phone_number"
+    ],
+    "mfaConfiguration": "OPTIONAL",
+    "mfaTypes": [
+      "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": true,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+      "nickname"
+    ],
+    "aliasAttributes": [],
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+      "email"
+    ],
+    "userpoolClientReadAttributes": [
+      "email"
+    ],
+    "userpoolClientLambdaRole": "mdochoa6f40e9b_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "sharedId": "a6f40e9b",
+    "resourceName": "mdochomecarea6f40e9ba6f40e9b",
+    "authSelections": "identityPoolAndUserPool",
+    "useDefault": "manual",
+    "thirdPartyAuth": false,
+    "usernameAttributes": [
+      "email, phone_number"
+    ],
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "triggers": {
+      "PostConfirmation": [
+        "custom"
+      ]
+    },
+    "hostedUI": false,
+    "userPoolGroupList": [],
+    "serviceName": "Cognito",
+    "usernameCaseSensitive": false,
+    "useEnabledMfas": true,
+    "authRoleArn": {
+      "Fn::GetAtt": [
+        "AuthRole",
+        "Arn"
+      ]
+    },
+    "unauthRoleArn": {
+      "Fn::GetAtt": [
+        "UnauthRole",
+        "Arn"
+      ]
+    },
+    "breakCircularDependency": true,
+    "dependsOn": [
+      {
+        "category": "function",
+        "resourceName": "mdochomecarea6f40e9ba6f40e9bPostConfirmation",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      }
+    ],
+    "permissions": [],
+    "authTriggerConnections": [
+      "{\"triggerType\":\"PostConfirmation\",\"lambdaFunctionName\":\"mdochomecarea6f40e9ba6f40e9bPostConfirmation\"}"
+    ]
+  }
+}

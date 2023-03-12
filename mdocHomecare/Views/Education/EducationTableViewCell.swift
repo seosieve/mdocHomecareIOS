@@ -8,11 +8,9 @@
 import UIKit
 import YoutubePlayer_in_WKWebView
 
-
 class EducationTableViewCell: UITableViewCell {
     
     var educationVideoView = WKYTPlayerView().then {
-        $0.backgroundColor = .orange
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 10
     }
@@ -37,7 +35,7 @@ class EducationTableViewCell: UITableViewCell {
         $0.font = UIFont(font: FontFamily.SFProText.regular, size: 14)
         $0.textColor = Colors.Layout.I100
         $0.numberOfLines = 0
-        $0.text = "신장이 하는 일, 만성 dkamw;dka;wdkwakdakwdkwa신부전 개념"
+        $0.text = "신장이 하는 일, 만성신부전 개념"
     }
     
     var hashTagLable = UILabel().then {
@@ -48,6 +46,7 @@ class EducationTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        educationVideoView.delegate = self
         setViews()
     }
     
@@ -64,11 +63,11 @@ class EducationTableViewCell: UITableViewCell {
     }
     
     func setViews() {
-        self.addSubview(educationVideoView)
-        self.addSubview(playtimeLabel)
-        self.addSubview(titleLabel)
-        self.addSubview(subtitleLable)
-        self.addSubview(hashTagLable)
+        contentView.addSubview(educationVideoView)
+        contentView.addSubview(playtimeLabel)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(subtitleLable)
+        contentView.addSubview(hashTagLable)
         
         educationVideoView.snp.makeConstraints { make in
             make.height.equalTo(210)
@@ -100,8 +99,18 @@ class EducationTableViewCell: UITableViewCell {
             make.top.equalTo(subtitleLable.snp.bottom).offset(8)
             make.bottom.equalToSuperview().inset(24)
         }
-        
-        educationVideoView.load(withVideoId: "ldC6qoCfHRI")
     }
+}
 
+extension EducationTableViewCell: WKYTPlayerViewDelegate {
+    func playerViewPreferredInitialLoading(_ playerView: WKYTPlayerView) -> UIView? {
+        let loadingView = UIView().then {
+            $0.backgroundColor = Colors.Layout.I0
+            $0.isUserInteractionEnabled = false
+        }
+        UIView.animate(withDuration: 1, delay: 0, options: [.repeat, .autoreverse]) {
+            loadingView.backgroundColor = Colors.Layout.I30
+        }
+        return loadingView
+    }
 }

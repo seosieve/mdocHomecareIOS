@@ -1,0 +1,84 @@
+type Impossible @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userID: String
+  ttime: String
+}
+
+type MySchedule @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userID: ID @index(name: "byUser")
+  scheduleID: ID @index(name: "bySchedule")
+}
+
+type Schedule @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Reservation: String
+  ttime: AWSDateTime
+  time: AWSTimestamp
+  BOOK: String
+  Users: [User] @manyToMany(relationName: "ScheduleUser")
+  state: Int
+  MySchedules: [MySchedule] @hasMany(indexName: "bySchedule", fields: ["id"])
+}
+
+type Questionnarie @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  content: String
+  Q1: String
+  Q2: String
+  Q3: String
+  Q4: String
+  Q5: String
+  Q6: String
+  Q7: [String]
+  userID: ID @index(name: "byUser")
+  chatroomID: ID @index(name: "byChatRoom")
+  state: Int
+}
+
+type ChatRoom @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  newMessages: Int
+  name: String
+  Messages: [Message] @hasMany(indexName: "byChatRoom", fields: ["id"])
+  Users: [User] @manyToMany(relationName: "ChatRoomUser")
+  LastMessage: Message @hasOne
+  Questionnaries: [Questionnarie] @hasMany(indexName: "byChatRoom", fields: ["id"])
+  Schedule: Schedule @hasOne
+  state: String
+}
+
+enum MessageStatus {
+  SENT
+  DELIVERED
+  READ
+}
+
+type Message @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  image: String
+  status: MessageStatus
+  content: String
+  userID: ID @index(name: "byUser")
+  chatroomID: ID @index(name: "byChatRoom")
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  patientNumber: String
+  phoneNumber: String
+  email: String
+  status: String
+  lastOnlineAt: AWSTimestamp
+  schedules: [Schedule] @manyToMany(relationName: "ScheduleUser")
+  Messages: [Message] @hasMany(indexName: "byUser", fields: ["id"])
+  Questionnaries: [Questionnarie] @hasMany(indexName: "byUser", fields: ["id"])
+  chatrooms: [ChatRoom] @manyToMany(relationName: "ChatRoomUser")
+  state: Int
+  MySchedules: [MySchedule] @hasMany(indexName: "byUser", fields: ["id"])
+  sex: String
+  born: String
+  phoneNOK: String
+}
+ 

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "mdochomecare",
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-11-08T18:02:13.968Z",
+      "keyDescription": "api key description"
+    },
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "AUTOMERGE"
+      }
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "AWS_IAM"
+      }
+    ]
+  }
+}

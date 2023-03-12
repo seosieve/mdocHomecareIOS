@@ -8,6 +8,7 @@
 import UIKit
 import Then
 import SnapKit
+import Amplify
 
 class HomeViewController: UIViewController {
     let maxHeight: CGFloat = 228 + window.safeAreaInsets.top
@@ -31,7 +32,7 @@ class HomeViewController: UIViewController {
         $0.font = UIFont(font: FontFamily.SFProText.bold, size: 16)
         $0.textColor = Colors.Text.mainContent
     }
-//frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .insetGrouped
+    
     var scheduleTableView = UITableView().then {
         $0.backgroundColor = Colors.Layout.I0
         $0.isScrollEnabled = false
@@ -69,32 +70,70 @@ class HomeViewController: UIViewController {
         $0.textColor = Colors.Text.blueSubContent
     }
     
-    var scheduleTitleLabel = UILabel().then {
-        $0.text = "상담 일정"
-        $0.font = UIFont(font: FontFamily.SFProText.bold, size: 16)
-        $0.textColor = Colors.Text.mainContent
-    }
-    
     var buttonStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.spacing = 12
         $0.distribution = .fillEqually
     }
     
-    var enterChatButton = UIButton().then {
+    lazy var enterChatButton = UIButton().then {
         $0.setTitle("상담방 입장", for: .normal)
         $0.backgroundColor = Colors.Semantic.mdocBlueRenew
         $0.titleLabel?.textColor = Colors.Layout.I0
         $0.titleLabel?.font = UIFont(font: FontFamily.SFProText.medium, size: 14)
         $0.layer.cornerRadius = 8
+        $0.addTarget(self, action: #selector(enterChatButtonPressed), for: .touchUpInside)
     }
     
-    var newReserveButton = UIButton().then {
+    @objc func enterChatButtonPressed() {
+        let a = Amplify.Auth.getCurrentUser()
+        let aa = a?.username
+        let aaa = a?.userId
+        print(a, aaa)
+//        Amplify.DataStore.query(User.self, byId: aaa!) {
+//            switch $0 {
+//            case .success(let result):
+//                print(result)
+//                // result will be a single object of type Post?
+//
+//                var user = result!
+//                user.sex = "기모찌"
+//
+//                Amplify.DataStore.save(user) {
+//                    switch $0 {
+//                    case .success:
+//                        print("Updated the existing post")
+//                    case .failure(let error):
+//                        print("Error updating post - \(error.localizedDescription)")
+//                    }
+//                }
+//
+//
+//            case .failure(let error):
+//                print("Error on query() for type Post - \(error.localizedDescription)")
+//            }
+//        }
+        
+        let alart = UIAlertController(title: "아직 안만듬", message: "", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        cancel.setValue(Colors.Text.subContent, forKey: "titleTextColor")
+        alart.addAction(cancel)
+        self.present(alart, animated: true)
+    }
+    
+    lazy var newReserveButton = UIButton().then {
         $0.setTitle("새 상담 예약", for: .normal)
         $0.backgroundColor = Colors.Semantic.mdocBlueRenew
         $0.titleLabel?.textColor = Colors.Layout.I0
         $0.titleLabel?.font = UIFont(font: FontFamily.SFProText.medium, size: 14)
         $0.layer.cornerRadius = 8
+        $0.addTarget(self, action: #selector(newReserveButtonPressed), for: .touchUpInside)
+    }
+    
+    @objc func newReserveButtonPressed() {
+        let vc = CalendarViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
     var animationButton = UIButton().then {
@@ -150,7 +189,6 @@ class HomeViewController: UIViewController {
         topSheetTextView.addSubview(mainLabel)
         topSheetTextView.addSubview(mainSideLabel)
         topSheetTextView.addSubview(subLabel)
-//        view.addSubview(scheduleTitleLabel)
         
         topSheetView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
@@ -191,22 +229,17 @@ class HomeViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().inset(20)
         }
-        
-//        scheduleTitleLabel.snp.makeConstraints { make in
-//            make.left.equalToSuperview().offset(20)
-//            make.top.equalTo(topSheetView.snp.bottom).offset(20)
-//        }
     }
 }
 
 //MARK: - UITableView
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -264,7 +297,7 @@ extension HomeViewController: UIScrollViewDelegate {
                 make.height.equalTo(max(-scrollView.contentOffset.y, minHeight))
             }
             topSheetTextView.snp.updateConstraints { make in
-                make.top.equalTo(max(40 + window.safeAreaInsets.top - (level), 10))
+                make.top.equalTo(max(40 + window.safeAreaInsets.top - (level), window.safeAreaInsets.top - 30))
             }
             nameLabel.alpha = 1 - level*0.03
             mainLabel.alpha = 1 - level*0.015

@@ -6,27 +6,54 @@
 //
 
 import UIKit
+import Amplify
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
+    func AmplifyFetchAuth(fetchAuthHandler: @escaping (Bool) -> ()) {
+        Amplify.Auth.fetchAuthSession { result in
+            switch result {
+            case .success(let session):
+                print("Is user signed in - \(session.isSignedIn)")
+                DispatchQueue.main.async {
+                    fetchAuthHandler(session.isSignedIn)
+                }
+            case .failure(let error):
+                print("Fetch session failed with error \(error)")
+            }
+        }
+    }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let userHasLoggedIn: Bool = false
-        //Login 안헀을 때 VC
-        let startViewController = StartViewController()
-        let navigationController = UINavigationController(rootViewController: startViewController)
-        //Login 했을 때 VC
-        let homeViewController = TabBarController()
         
+        //Fetch delay 기다리기 위한 instantView
+        let instantViewController = UIViewController()
+        instantViewController.view.backgroundColor = Colors.Layout.I0
+        self.window?.rootViewController = instantViewController
+        self.window?.makeKeyAndVisible()
         
-        let vvv = AcceptTermsViewController()
+        AmplifyFetchAuth { userSignedIn in
+            let viewController: UIViewController
+            if userSignedIn {
+                //Login 했을 때 viewController
+                viewController = TabBarController()
+            } else {
+                //Login 안했을 때 viewController
+//                let startViewController = StartViewController()
+//                viewController = UINavigationController(rootViewController: startViewController)
+                viewController = TabBarController()
+            }
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+        }
         
-        let vc = userHasLoggedIn ? homeViewController : navigationController
-        window?.rootViewController = vvv
-        window?.makeKeyAndVisible()
+        //임시
+//        let registerViewController = RegisterViewController()
+//        let instantViewController = UINavigationController(rootViewController: registerViewController)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

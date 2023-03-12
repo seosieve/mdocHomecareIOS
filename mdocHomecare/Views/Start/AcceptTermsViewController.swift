@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol TermDetailViewDelegate {
+    func acceptTerm(_ index: Int)
+}
+
 class AcceptTermsViewController: UIViewController {
-    
+
     let termStringArr = ["(필수) 엠닥홈케어 이용약관 동의", "(필수) 개인정보 수집 및 이용 동의", "(선택) 광고성 정보 수신 동의", "만 14세 이상 회원입니다."]
+    var termAcceptArr = [false, false, false, false]
     
     var acceptTermsContainerView = UIView().then {
         $0.backgroundColor = Colors.Layout.I0
@@ -56,9 +61,21 @@ class AcceptTermsViewController: UIViewController {
     }
     
     @objc func continueButtonPressed() {
-        let alart = UIAlertController(title: "회원가입을 계속 진행하시려면 필수 약관을 동의해주세요", message: "", preferredStyle: .alert)
-        alart.addAction(UIAlertAction(title: "OK", style: .cancel))
-        present(alart, animated: true)
+        if termAcceptArr[0] && termAcceptArr[1] {
+            if termAcceptArr[3] {
+                let vc = RegisterViewController()
+                vc.userInfoArr[0] = String(termAcceptArr[2])
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let alart = UIAlertController(title: "만 14세 이상만 회원가입을 진행하실 수 있습니다.", message: "", preferredStyle: .alert)
+                alart.addAction(UIAlertAction(title: "OK", style: .cancel))
+                present(alart, animated: true)
+            }
+        } else {
+            let alart = UIAlertController(title: "회원가입을 계속 진행하시려면 필수 약관을 동의해주세요", message: "", preferredStyle: .alert)
+            alart.addAction(UIAlertAction(title: "OK", style: .cancel))
+            present(alart, animated: true)
+        }
     }
     
     override func viewDidLoad() {
@@ -129,11 +146,11 @@ class AcceptTermsViewController: UIViewController {
 
 //MARK: - UITableView
 extension AcceptTermsViewController: UITableViewDelegate, UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return termAcceptArr.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "acceptTermsTableViewCell", for: indexPath) as! AcceptTermsTableViewCell
         cell.selectionStyle = .none
@@ -142,17 +159,39 @@ extension AcceptTermsViewController: UITableViewDelegate, UITableViewDataSource 
         } else {
             cell.showTermButton.isEnabled = false
         }
+        cell.checkButton.isSelected = termAcceptArr[indexPath.row]
+        if cell.checkButton.isSelected {
+            cell.checkButton.tintColor = Colors.Semantic.mdocBlue
+        } else {
+            cell.checkButton.tintColor = Colors.Default.gray4
+        }
         cell.termTitleButton.setTitle(termStringArr[indexPath.row], for: .normal)
         cell.termTitleButton.setColorRange("(필수)", UIColor.red)
+        cell.checkTermAction = { bool in
+            self.termAcceptArr[indexPath.row] = bool
+            print(self.termAcceptArr)
+        }
         cell.showTermButtonAction = { [weak self] in
             let vc = TermDetailViewController()
+            vc.delegate = self
             vc.index = indexPath.row
             vc.modalPresentationStyle = .automatic
             self!.present(vc, animated: true, completion: nil)
         }
         return cell
     }
-    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+}
+
+extension AcceptTermsViewController: TermDetailViewDelegate {
+    func acceptTerm(_ index: Int) {
+        termAcceptArr[index] = true
+        termTableView.reloadData()
+        print(termAcceptArr)
+    }
 }
 
 

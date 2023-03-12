@@ -49,6 +49,7 @@ extension AWSCognitoAuthPlugin {
                       userService: userService,
                       deviceService: deviceService,
                       hubEventHandler: hubEventHandler,
+                      authConfig: jsonValueConfiguration,
                       queue: operationQueue)
         } catch let authError as AuthError {
             throw authError
@@ -66,7 +67,7 @@ extension AWSCognitoAuthPlugin {
 
     func awsMobileClientAdapter(from authConfiguration: JSONValue) throws -> AWSMobileClientBehavior {
         let identityPoolConfig = identityPoolServiceConfiguration(from: authConfiguration)
-        let userPoolConfig = userPoolServiceConfiguration(from: authConfiguration)
+        let userPoolConfig = try userPoolServiceConfiguration(from: authConfiguration)
 
         // Auth plugin require atleast one of the Cognito service to work. Throw an error if both the service
         // configuration are nil.
@@ -97,21 +98,70 @@ extension AWSCognitoAuthPlugin {
         }
         let region = (regionString as NSString).aws_regionTypeValue()
         let anonymousCredentialProvider = AWSAnonymousCredentialsProvider()
-        return AmplifyAWSServiceConfiguration(region: region, credentialsProvider: anonymousCredentialProvider)
+        let service = AmplifyAWSServiceConfiguration(region: region, credentialsProvider: anonymousCredentialProvider)
+        setUserPreferencesForService(service: service)
+        return service
     }
 
-    func userPoolServiceConfiguration(from authConfiguration: JSONValue) -> AmplifyAWSServiceConfiguration? {
+    func setUserPreferencesForService(service: AmplifyAWSServiceConfiguration) {
+        guard let networkPreferences = networkPreferences else {
+            return
+        }
+        service.maxRetryCount = networkPreferences.maxRetryCount
+        service.timeoutIntervalForRequest = networkPreferences.timeoutIntervalForRequest
+        service.timeoutIntervalForResource = networkPreferences.timeoutIntervalForResource
+    }
+
+    func userPoolServiceConfiguration(from authConfiguration: JSONValue) throws -> AmplifyAWSServiceConfiguration? {
         let regionKeyPath = "CognitoUserPool.Default.Region"
         guard case .string(let regionString) = authConfiguration.value(at: regionKeyPath) else {
             Amplify.Logging.warn("Could not read Cognito user pool information from the configuration.")
             return nil
         }
         let region = (regionString as NSString).aws_regionTypeValue()
-        return AmplifyAWSServiceConfiguration(region: region)
+
+        let service: AmplifyAWSServiceConfiguration
+        if  let endpoint = try resolveCognitoOverrideEndpoint(using: authConfiguration, region: region) {
+            service = AmplifyAWSServiceConfiguration(region: region, endpoint: endpoint)
+        } else {
+            service = AmplifyAWSServiceConfiguration(region: region)
+        }
+        setUserPreferencesForService(service: service)
+        return service
     }
 
-    // MARK: Internal
+    func resolveCognitoOverrideEndpoint(
+        using authConfiguration: JSONValue,
+        region: AWSRegionType) throws -> AWSEndpoint? {
 
+            let endpointKeyPath = "CognitoUserPool.Default.Endpoint"
+            guard case .string(let endpointString) = authConfiguration.value(at: endpointKeyPath) else {
+                return nil
+            }
+
+            let amplifyError = AuthError.configuration(
+                "Error configuring \(String(describing: self))",
+            """
+            Invalid Endpoint value \(endpointString). Expected a fully-qualified hostname.
+            """)
+
+            guard (URLComponents(string: endpointString)?.scheme ?? "").isEmpty else {
+                throw amplifyError
+            }
+
+            let endpointStringWithScheme = "https://" + endpointString
+            guard
+                let components = URLComponents(string: endpointStringWithScheme),
+                components.path == "",
+                let url = components.url
+            else {
+                throw amplifyError
+            }
+
+            return AWSEndpoint(region: region, service: .CognitoIdentityProvider, url: url)
+        }
+
+    // MARK: Internal
     /// Internal configure method to set the properties of the plugin
     ///
     /// Called from the configure method which implements the Plugin protocol. Useful for testing by passing in mocks.
@@ -125,12 +175,14 @@ extension AWSCognitoAuthPlugin {
                    userService: AuthUserServiceBehavior,
                    deviceService: AuthDeviceServiceBehavior,
                    hubEventHandler: AuthHubEventBehavior,
+                   authConfig: JSONValue = JSONValue.object([:]),
                    queue: OperationQueue = OperationQueue()) {
         self.authenticationProvider = authenticationProvider
         self.authorizationProvider = authorizationProvider
         self.userService = userService
         self.deviceService = deviceService
         self.hubEventHandler = hubEventHandler
+        configuration = authConfig
         self.queue = queue
     }
 }

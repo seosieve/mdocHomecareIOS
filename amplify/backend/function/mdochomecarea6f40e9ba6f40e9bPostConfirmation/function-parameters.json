@@ -1,0 +1,17 @@
+{
+  "trigger": true,
+  "modules": [
+    "custom"
+  ],
+  "parentResource": "mdochomecarea6f40e9ba6f40e9b",
+  "functionName": "mdochomecarea6f40e9ba6f40e9bPostConfirmation",
+  "resourceName": "mdochomecarea6f40e9ba6f40e9bPostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "/snapshot/repo/build/node_modules/@aws-amplify/amplify-category-auth/provider-utils/awscloudformation/triggers/PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "triggerEventPath": "PostConfirmation.event.json",
+  "roleName": "mdochomecarea6f40e9ba6f40e9bPostConfirmation",
+  "skipEdit": true,
+  "enableCors": false
+}

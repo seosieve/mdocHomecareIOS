@@ -1,0 +1,1522 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateImpossible(
+  $input: CreateImpossibleInput!
+  $condition: ModelImpossibleConditionInput
+) {
+  createImpossible(input: $input, condition: $condition) {
+    id
+    userID
+    ttime
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateImpossible(
+  $input: UpdateImpossibleInput!
+  $condition: ModelImpossibleConditionInput
+) {
+  updateImpossible(input: $input, condition: $condition) {
+    id
+    userID
+    ttime
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteImpossible(
+  $input: DeleteImpossibleInput!
+  $condition: ModelImpossibleConditionInput
+) {
+  deleteImpossible(input: $input, condition: $condition) {
+    id
+    userID
+    ttime
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation CreateMySchedule(
+  $input: CreateMyScheduleInput!
+  $condition: ModelMyScheduleConditionInput
+) {
+  createMySchedule(input: $input, condition: $condition) {
+    id
+    userID
+    scheduleID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateMySchedule(
+  $input: UpdateMyScheduleInput!
+  $condition: ModelMyScheduleConditionInput
+) {
+  updateMySchedule(input: $input, condition: $condition) {
+    id
+    userID
+    scheduleID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteMySchedule(
+  $input: DeleteMyScheduleInput!
+  $condition: ModelMyScheduleConditionInput
+) {
+  deleteMySchedule(input: $input, condition: $condition) {
+    id
+    userID
+    scheduleID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation CreateSchedule(
+  $input: CreateScheduleInput!
+  $condition: ModelScheduleConditionInput
+) {
+  createSchedule(input: $input, condition: $condition) {
+    id
+    Reservation
+    ttime
+    time
+    BOOK
+    Users {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateSchedule(
+  $input: UpdateScheduleInput!
+  $condition: ModelScheduleConditionInput
+) {
+  updateSchedule(input: $input, condition: $condition) {
+    id
+    Reservation
+    ttime
+    time
+    BOOK
+    Users {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteSchedule(
+  $input: DeleteScheduleInput!
+  $condition: ModelScheduleConditionInput
+) {
+  deleteSchedule(input: $input, condition: $condition) {
+    id
+    Reservation
+    ttime
+    time
+    BOOK
+    Users {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation CreateQuestionnarie(
+  $input: CreateQuestionnarieInput!
+  $condition: ModelQuestionnarieConditionInput
+) {
+  createQuestionnarie(input: $input, condition: $condition) {
+    id
+    content
+    Q1
+    Q2
+    Q3
+    Q4
+    Q5
+    Q6
+    Q7
+    userID
+    chatroomID
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateQuestionnarie(
+  $input: UpdateQuestionnarieInput!
+  $condition: ModelQuestionnarieConditionInput
+) {
+  updateQuestionnarie(input: $input, condition: $condition) {
+    id
+    content
+    Q1
+    Q2
+    Q3
+    Q4
+    Q5
+    Q6
+    Q7
+    userID
+    chatroomID
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteQuestionnarie(
+  $input: DeleteQuestionnarieInput!
+  $condition: ModelQuestionnarieConditionInput
+) {
+  deleteQuestionnarie(input: $input, condition: $condition) {
+    id
+    content
+    Q1
+    Q2
+    Q3
+    Q4
+    Q5
+    Q6
+    Q7
+    userID
+    chatroomID
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation CreateChatRoom(
+  $input: CreateChatRoomInput!
+  $condition: ModelChatRoomConditionInput
+) {
+  createChatRoom(input: $input, condition: $condition) {
+    id
+    newMessages
+    name
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Users {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    LastMessage {
+      id
+      image
+      status
+      content
+      userID
+      chatroomID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    chatRoomLastMessageId
+    chatRoomScheduleId
+  }
+}
+mutation UpdateChatRoom(
+  $input: UpdateChatRoomInput!
+  $condition: ModelChatRoomConditionInput
+) {
+  updateChatRoom(input: $input, condition: $condition) {
+    id
+    newMessages
+    name
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Users {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    LastMessage {
+      id
+      image
+      status
+      content
+      userID
+      chatroomID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    chatRoomLastMessageId
+    chatRoomScheduleId
+  }
+}
+mutation DeleteChatRoom(
+  $input: DeleteChatRoomInput!
+  $condition: ModelChatRoomConditionInput
+) {
+  deleteChatRoom(input: $input, condition: $condition) {
+    id
+    newMessages
+    name
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Users {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    LastMessage {
+      id
+      image
+      status
+      content
+      userID
+      chatroomID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    chatRoomLastMessageId
+    chatRoomScheduleId
+  }
+}
+mutation CreateMessage(
+  $input: CreateMessageInput!
+  $condition: ModelMessageConditionInput
+) {
+  createMessage(input: $input, condition: $condition) {
+    id
+    image
+    status
+    content
+    userID
+    chatroomID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateMessage(
+  $input: UpdateMessageInput!
+  $condition: ModelMessageConditionInput
+) {
+  updateMessage(input: $input, condition: $condition) {
+    id
+    image
+    status
+    content
+    userID
+    chatroomID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteMessage(
+  $input: DeleteMessageInput!
+  $condition: ModelMessageConditionInput
+) {
+  deleteMessage(input: $input, condition: $condition) {
+    id
+    image
+    status
+    content
+    userID
+    chatroomID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  createUser(input: $input, condition: $condition) {
+    id
+    name
+    patientNumber
+    phoneNumber
+    email
+    status
+    lastOnlineAt
+    schedules {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    chatrooms {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    sex
+    born
+    phoneNOK
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    id
+    name
+    patientNumber
+    phoneNumber
+    email
+    status
+    lastOnlineAt
+    schedules {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    chatrooms {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    sex
+    born
+    phoneNOK
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
+) {
+  deleteUser(input: $input, condition: $condition) {
+    id
+    name
+    patientNumber
+    phoneNumber
+    email
+    status
+    lastOnlineAt
+    schedules {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    chatrooms {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    sex
+    born
+    phoneNOK
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation CreateScheduleUser(
+  $input: CreateScheduleUserInput!
+  $condition: ModelScheduleUserConditionInput
+) {
+  createScheduleUser(input: $input, condition: $condition) {
+    id
+    scheduleID
+    userID
+    schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateScheduleUser(
+  $input: UpdateScheduleUserInput!
+  $condition: ModelScheduleUserConditionInput
+) {
+  updateScheduleUser(input: $input, condition: $condition) {
+    id
+    scheduleID
+    userID
+    schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteScheduleUser(
+  $input: DeleteScheduleUserInput!
+  $condition: ModelScheduleUserConditionInput
+) {
+  deleteScheduleUser(input: $input, condition: $condition) {
+    id
+    scheduleID
+    userID
+    schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation CreateChatRoomUser(
+  $input: CreateChatRoomUserInput!
+  $condition: ModelChatRoomUserConditionInput
+) {
+  createChatRoomUser(input: $input, condition: $condition) {
+    id
+    chatRoomID
+    userID
+    chatRoom {
+      id
+      newMessages
+      name
+      Messages {
+        nextToken
+        startedAt
+      }
+      Users {
+        nextToken
+        startedAt
+      }
+      LastMessage {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      Schedule {
+        id
+        Reservation
+        ttime
+        time
+        BOOK
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      state
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      chatRoomLastMessageId
+      chatRoomScheduleId
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateChatRoomUser(
+  $input: UpdateChatRoomUserInput!
+  $condition: ModelChatRoomUserConditionInput
+) {
+  updateChatRoomUser(input: $input, condition: $condition) {
+    id
+    chatRoomID
+    userID
+    chatRoom {
+      id
+      newMessages
+      name
+      Messages {
+        nextToken
+        startedAt
+      }
+      Users {
+        nextToken
+        startedAt
+      }
+      LastMessage {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      Schedule {
+        id
+        Reservation
+        ttime
+        time
+        BOOK
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      state
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      chatRoomLastMessageId
+      chatRoomScheduleId
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteChatRoomUser(
+  $input: DeleteChatRoomUserInput!
+  $condition: ModelChatRoomUserConditionInput
+) {
+  deleteChatRoomUser(input: $input, condition: $condition) {
+    id
+    chatRoomID
+    userID
+    chatRoom {
+      id
+      newMessages
+      name
+      Messages {
+        nextToken
+        startedAt
+      }
+      Users {
+        nextToken
+        startedAt
+      }
+      LastMessage {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      Schedule {
+        id
+        Reservation
+        ttime
+        time
+        BOOK
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      state
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      chatRoomLastMessageId
+      chatRoomScheduleId
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}

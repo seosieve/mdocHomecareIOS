@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Amplify
 
-class LoginViewController: UIViewController, UITextViewDelegate {
+class LoginViewController: UIViewController {
+    
+    let loginViewModel = LoginViewModel()
     
     var loginContainerView = UIView().then {
         $0.backgroundColor = Colors.Layout.I0
@@ -40,15 +43,16 @@ class LoginViewController: UIViewController, UITextViewDelegate {
     }
     
     var phoneNumberLabel = UILabel().then {
-        $0.text = "휴대번호"
+        $0.text = "전화번호"
         $0.font = UIFont(font: FontFamily.SFProText.regular, size: 16)
         $0.textColor = Colors.Text.subContent
     }
     
     var phoneNumberTextField = UITextField().then {
         $0.font = UIFont(font: FontFamily.SFProText.regular, size: 16)
-        $0.attributedPlaceholder = NSAttributedString(string: "ex. 01012345678", attributes: [NSAttributedString.Key.foregroundColor : Colors.Default.gray4])
+        $0.attributedPlaceholder = NSAttributedString(string: "ex. 010-1234-5678", attributes: [NSAttributedString.Key.foregroundColor : Colors.Default.gray4])
         $0.textColor = Colors.Text.mainContent
+        $0.keyboardType = .numberPad
     }
     
     var passwordContainerView = UIView().then {
@@ -103,16 +107,34 @@ class LoginViewController: UIViewController, UITextViewDelegate {
         $0.setBackgroundColor(Colors.Semantic.mdocBlue, for: .normal)
         $0.setBackgroundColor(Colors.Semantic.mdocBlue.withAlphaComponent(0.3), for: .disabled)
         $0.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
-        $0.isEnabled = false
+        $0.isEnabled = true
     }
     
     @objc private func startButtonTapped() {
-        if startButton.isEnabled {
-            startButton.isEnabled = false
-            print("aa")
+        let phoneNumber = phoneNumberTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        if phoneNumber.count >= 8 && password.count >= 8 {
+            loginViewModel.signIn(username: phoneNumber.makeGlobal(), password: password) { success in
+                if success {
+                    
+                    
+                    
+                    
+                    
+                    
+                    let vc = TabBarController()
+                    window.rootViewController = vc
+                    window.makeKeyAndVisible()
+                } else {
+                    let alart = UIAlertController(title: "비밀번호가 일치하지 않습니다", message: "비밀번호를 다시 확인해주세요", preferredStyle: .alert)
+                    alart.addAction(UIAlertAction(title: "OK", style: .cancel))
+                    self.present(alart, animated: true)
+                }
+            }
         } else {
-            startButton.isEnabled = true
-            print("bb")
+            let alart = UIAlertController(title: "정확한 전화번호와 비밀번호를 입력해주세요", message: "", preferredStyle: .alert)
+            alart.addAction(UIAlertAction(title: "OK", style: .cancel))
+            present(alart, animated: true)
         }
     }
     
@@ -139,13 +161,54 @@ class LoginViewController: UIViewController, UITextViewDelegate {
         view.backgroundColor = Colors.Layout.I0
         self.navigationController?.navigationBar.tintColor = Colors.Text.mainContent
         self.navigationController?.navigationBar.topItem?.title = ""
-        phoneNumberTextField.delegate = self
-        passwordTextField.delegate = self
         self.hideKeyboardWhenTapped()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         setViews()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.view.endEditing(true)
+    }
+    
+//    func create() {
+//        let user = User(name: "김덕배", sex: "남")
+//        Amplify.DataStore.save(user) { result in
+//            switch result {
+//            case .success:
+//                print("success")
+//            case .failure:
+//                print("fail")
+//            }
+//        }
+//    }
+//
+//    var userArr = [User]()
+//
+//    func read() {
+//        Amplify.DataStore.query(User.self) { result in
+//            switch result {
+//            case .success(let posts):
+//                userArr = posts
+//            case .failure(let error):
+//                print("Error retrieving posts \(error)")
+//            }
+//        }
+//    }
+//
+//    func update() {
+//        var existingPost = userArr[0]
+//
+//        Amplify.DataStore.delete(existingPost) {
+//            switch $0 {
+//            case .success:
+//                print("Deleted the existing post")
+//            case .failure(let error):
+//                print("Error updating post - \(error.localizedDescription)")
+//            }
+//        }
+//    }
     
     func setViews() {
         self.view.addSubview(loginContainerView)
@@ -250,23 +313,5 @@ class LoginViewController: UIViewController, UITextViewDelegate {
             make.right.equalTo(startButton.snp.left).offset(-8)
         }
         registerButton.rounded()
-        
-    }
-}
-
-//MARK: - UITextFieldDelegate
-extension LoginViewController: UITextFieldDelegate {
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        let phoneNumberCount = phoneNumberTextField.text?.count ?? 0
-        let passwordCount = passwordTextField.text?.count ?? 0
-        if phoneNumberCount >= 8 && passwordCount >= 8 {
-            UIView.transition(with: registerButton, duration: 2, options: .transitionCrossDissolve, animations: {
-                self.registerButton.isEnabled = false
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-                
-        } else {
-            
-        }
     }
 }

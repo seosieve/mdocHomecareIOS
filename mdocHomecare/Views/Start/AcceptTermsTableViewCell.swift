@@ -6,14 +6,11 @@
 //
 
 import UIKit
-import RxSwift
-import RxRelay
 
 class AcceptTermsTableViewCell: UITableViewCell {
     
-    let disposeBag = DisposeBag()
-    
     var showTermButtonAction: (() -> ())?
+    var checkTermAction: ((Bool) -> ())?
     
     var termContainerView = UIView().then {
         $0.backgroundColor = Colors.Layout.I10
@@ -42,6 +39,7 @@ class AcceptTermsTableViewCell: UITableViewCell {
                 self.checkButton.tintColor = Colors.Semantic.mdocBlue
             }
         }
+        checkTermAction?(checkButton.isSelected)
     }
     
     lazy var termTitleButton = UIButton(type: .system).then {
@@ -80,6 +78,7 @@ class AcceptTermsTableViewCell: UITableViewCell {
     }
     
     func setViews() {
+        contentView.backgroundColor = Colors.Layout.I0
         contentView.addSubview(termContainerView)
         
         termContainerView.snp.makeConstraints { make in
@@ -110,8 +109,5 @@ class AcceptTermsTableViewCell: UITableViewCell {
             make.width.height.equalTo(24)
             make.right.equalToSuperview().inset(12)
         }
-    }
-    
-    func setupControl() {
     }
 }

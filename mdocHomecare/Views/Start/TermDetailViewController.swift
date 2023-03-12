@@ -8,8 +8,9 @@
 import UIKit
 import WebKit
 
-class TermDetailViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
+class TermDetailViewController: UIViewController {
     
+    var delegate: TermDetailViewDelegate?
     var index: Int?
     let urlString = ["https://m-doc.io/check/check/data/", "https://m-doc.io/check/check/agree"]
     
@@ -43,7 +44,8 @@ class TermDetailViewController: UIViewController, WKUIDelegate, WKNavigationDele
     }
     
     @objc func acceptTermButtonPressed() {
-        
+        delegate?.acceptTerm(index!)
+        self.dismiss(animated: true)
     }
     
     override func viewDidLoad() {
@@ -62,13 +64,14 @@ class TermDetailViewController: UIViewController, WKUIDelegate, WKNavigationDele
             make.bottom.equalToSuperview().inset(100)
             make.top.left.centerX.equalToSuperview()
         }
-//        DispatchQueue.global().async {
-//            let url = URL(string: self.urlString[self.index!])
-//            let request = URLRequest(url: url!)
-//            DispatchQueue.main.async {
-//                self.termDetailWebView.load(request)
-//            }
-//        }
+        
+        DispatchQueue.global().async {
+            let url = URL(string: self.urlString[self.index!])
+            let request = URLRequest(url: url!)
+            DispatchQueue.main.async {
+                self.termDetailWebView.load(request)
+            }
+        }
         acceptTermButton.snp.makeConstraints { make in
             make.top.equalTo(termDetailWebView.snp.bottom).offset(20)
             make.height.equalTo(44)
@@ -98,5 +101,15 @@ class TermDetailViewController: UIViewController, WKUIDelegate, WKNavigationDele
             make.height.width.equalTo(24)
             make.right.equalToSuperview().inset(16)
         }
+    }
+}
+
+extension TermDetailViewController: WKUIDelegate, WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        LoadingIndicator.showLoading()
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        LoadingIndicator.hideLoading()
     }
 }

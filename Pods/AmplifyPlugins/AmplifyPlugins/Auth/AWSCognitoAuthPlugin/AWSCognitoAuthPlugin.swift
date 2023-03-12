@@ -37,10 +37,16 @@ final public class AWSCognitoAuthPlugin: AuthCategoryPlugin {
     /// Handles different auth event send through hub
     var hubEventHandler: AuthHubEventBehavior!
 
+    /// Auth configuration used during initialization
+    var configuration: JSONValue!
+
     /// The unique key of the plugin within the auth category.
     public var key: PluginKey {
         return "awsCognitoAuthPlugin"
     }
+
+    /// The user network preferences for timeout and retry
+    let networkPreferences: AWSCognitoNetworkPreferences?
 
     public func getEscapeHatch() -> AWSCognitoAuthService {
         if let internalAuthorizationProvider = authorizationProvider as? AuthorizationProviderAdapter,
@@ -52,6 +58,14 @@ final public class AWSCognitoAuthPlugin: AuthCategoryPlugin {
 
     /// Instantiates an instance of the AWSCognitoAuthPlugin.
     public init() {
+        self.networkPreferences = nil
+    }
+
+    /// Instantiates an instance of the AWSCognitoAuthPlugin with custom network preferences
+    /// - Parameters:
+    ///   - networkPreferences: network preferences
+    public init(networkPreferences: AWSCognitoNetworkPreferences) {
+        self.networkPreferences = networkPreferences
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Amplify
 
 //MARK: - safeArea Detect
 let window: UIWindow = {
@@ -15,11 +16,29 @@ let window: UIWindow = {
     return window
 }()
 
+extension String {
+    func makeGlobal() -> String {
+        var phoneNumber = self
+        phoneNumber.remove(at: self.startIndex)
+        return "+82\(phoneNumber)"
+    }
+}
+
 extension UIView {
     func rounded() {
         layoutIfNeeded()
         self.layer.masksToBounds = true
         self.layer.cornerRadius = self.frame.height/2
+    }
+    
+    func shake(){
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 3
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 10, y: self.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 10, y: self.center.y))
+        self.layer.add(animation, forKey: "position")
     }
 }
 
@@ -64,8 +83,8 @@ extension UILabel {
     }
 }
 
-//MARK: - KeyBoardDownWhenTouched
 extension UIViewController {
+    //MARK: - KeyBoardDownWhenTouched
     func hideKeyboardWhenTapped() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
 //        tap.cancelsTouchesInView = false

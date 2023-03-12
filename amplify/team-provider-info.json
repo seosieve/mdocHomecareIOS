@@ -1,19 +1,32 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-mdochomecare-dev-145104-authRole",
-      "UnauthRoleArn": "arn:aws:iam::074202938609:role/amplify-mdochomecare-dev-145104-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::074202938609:role/amplify-mdochomecare-dev-145104-authRole",
+      "AuthRoleName": "amplify-mdochomecare-dev-191701-authRole",
+      "UnauthRoleArn": "arn:aws:iam::074202938609:role/amplify-mdochomecare-dev-191701-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::074202938609:role/amplify-mdochomecare-dev-191701-authRole",
       "Region": "ap-northeast-2",
-      "DeploymentBucketName": "amplify-mdochomecare-dev-145104-deployment",
-      "UnauthRoleName": "amplify-mdochomecare-dev-145104-unauthRole",
-      "StackName": "amplify-mdochomecare-dev-145104",
-      "StackId": "arn:aws:cloudformation:ap-northeast-2:074202938609:stack/amplify-mdochomecare-dev-145104/39ec9b20-b3db-11ec-87aa-06252c4d86d8",
-      "AmplifyAppId": "d3gy0zvo4z5b4y"
+      "DeploymentBucketName": "amplify-mdochomecare-dev-191701-deployment",
+      "UnauthRoleName": "amplify-mdochomecare-dev-191701-unauthRole",
+      "StackName": "amplify-mdochomecare-dev-191701",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:074202938609:stack/amplify-mdochomecare-dev-191701/61203920-3416-11ed-aac3-060b8ac59928",
+      "AmplifyAppId": "d2wl5xsf0yy5qh",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-mdochomecare-dev-191701-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
-        "mdochomecare2893848c2893848c": {}
+        "mdochomecarea6f40e9ba6f40e9b": {}
+      },
+      "function": {
+        "mdochomecarea6f40e9ba6f40e9bPostConfirmation": {
+          "deploymentBucketName": "amplify-mdochomecare-dev-191701-deployment",
+          "s3Key": "amplify-builds/mdochomecarea6f40e9ba6f40e9bPostConfirmation-4877684a34303871702b-build.zip"
+        }
+      },
+      "storage": {
+        "s3mdochomecarestorage9497a197": {}
+      },
+      "api": {
+        "mdochomecare": {}
       }
     }
   }

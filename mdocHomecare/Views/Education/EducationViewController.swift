@@ -10,9 +10,9 @@ import UserNotifications
 
 class EducationViewController: UIViewController {
 
-    let userNotificationCenter = UNUserNotificationCenter.current()
+//    let userNotificationCenter = UNUserNotificationCenter.current()
     
-//    lazy var notiButton: UIButton = {
+//    lazy var notiButton: UI Button = {
 //        let button = UIButton()
 //        button.setTitle("LocalNoti", for: .normal)
 //        button.setTitleColor(.blue, for: .normal)
@@ -22,9 +22,13 @@ class EducationViewController: UIViewController {
 //        button.addTarget(self, action: #selector(didTabButton), for: .touchUpInside)
 //        return button
 //    }()
+    
+    let educationViewModel = EducationViewModel()
+    
     let maxHeight = 117 + window.safeAreaInsets.top
-    let hashTagArr = ["전체", "#일반 사항", "#합병증", "#주제", "#어쩌구", "#저쩌구"]
+    let hashTagArr = ["전체", "#일반 사항", "#감염", "#영양", "#운동"]
     var selectedHashTagArr = ["전체"]
+    var selectedEducationArr = [Education]()
     
     var statusbarContainerView = UIView().then {
         $0.backgroundColor = Colors.Layout.I0
@@ -69,9 +73,7 @@ class EducationViewController: UIViewController {
         educationTableView.delegate = self
         educationTableView.dataSource = self
         educationTableView.register(EducationTableViewCell.self, forCellReuseIdentifier: "educationTableViewCell")
-//        educationTableView.estimatedRowHeight = 1300
         setViews()
-        educationTableView.rowHeight = UITableView.automaticDimension
     }
     
 //    @objc private func didTabButton() {
@@ -108,12 +110,16 @@ class EducationViewController: UIViewController {
             }
         }
         print(selectedHashTagArr)
+        selectedEducationArr = educationViewModel.makeEducation(selectedHashTagArr)
+        educationTableView.reloadData()
+        print(selectedEducationArr)
     }
     
     func setViews() {
 //        view.addSubview(notiButton)
 //        notiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 //        notiButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        selectedEducationArr = educationViewModel.makeEducation(selectedHashTagArr)
         view.addSubview(educationTableView)
         view.addSubview(statusbarContainerView)
         view.addSubview(educationTitleView)
@@ -171,7 +177,7 @@ class EducationViewController: UIViewController {
             make.left.right.equalToSuperview()
         }
         
-        for index in 0..<6 {
+        for index in 0..<5 {
             lazy var hashTag = UIButton().then {
                 $0.setBackgroundColor(Colors.Layout.I20, for: .normal)
                 $0.setBackgroundColor(Colors.Semantic.mdocBlue, for: .selected)
@@ -195,47 +201,53 @@ class EducationViewController: UIViewController {
     }
         
     //MARK: - Notification
-    func requestNotificationAuthorization() {
-        let authOptions = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
-
-        userNotificationCenter.requestAuthorization(options: authOptions) { success, error in
-            if let error = error {
-                print("Error: \(error)")
-            }
-        }
-    }
+//    func requestNotificationAuthorization() {
+//        let authOptions = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
+//
+//        userNotificationCenter.requestAuthorization(options: authOptions) { success, error in
+//            if let error = error {
+//                print("Error: \(error)")
+//            }
+//        }
+//    }
     
-    func sendNotification(seconds: Double) {
-        //Notification Contents
-        let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = "LocalNoti"
-        notificationContent.body = "LocalNotiTest"
-        //Image Attach
-        guard let imageURL = Bundle.main.url(forResource: "notImage", withExtension: ".jpeg") else { return }
-        let attachment = try! UNNotificationAttachment(identifier: "notImage", url: imageURL, options: .none)
-        notificationContent.attachments = [attachment]
-        //Notification Trigger
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
-        //Binding,identifier(handling) -> Request
-        let request = UNNotificationRequest(identifier: "testNotification", content: notificationContent, trigger: trigger)
-
-        userNotificationCenter.add(request) { error in
-            if let error = error {
-                print("Notification Error: ", error)
-            }
-        }
-    }
+//    func sendNotification(seconds: Double) {
+//        //Notification Contents
+//        let notificationContent = UNMutableNotificationContent()
+//        notificationContent.title = "LocalNoti"
+//        notificationContent.body = "LocalNotiTest"
+//        //Image Attach
+//        guard let imageURL = Bundle.main.url(forResource: "notImage", withExtension: ".jpeg") else { return }
+//        let attachment = try! UNNotificationAttachment(identifier: "notImage", url: imageURL, options: .none)
+//        notificationContent.attachments = [attachment]
+//        //Notification Trigger
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: false)
+//        //Binding,identifier(handling) -> Request
+//        let request = UNNotificationRequest(identifier: "testNotification", content: notificationContent, trigger: trigger)
+//
+//        userNotificationCenter.add(request) { error in
+//            if let error = error {
+//                print("Notification Error: ", error)
+//            }
+//        }
+//    }
 }
 
 //MARK: - UITableView
 extension EducationViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return selectedEducationArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "educationTableViewCell", for: indexPath) as! EducationTableViewCell
         cell.selectionStyle = .none
+        let education = selectedEducationArr[indexPath.row]
+        cell.educationVideoView.load(withVideoId: education.id)
+        cell.playtimeLabel.text = education.playTime
+        cell.titleLabel.text = education.title
+        cell.subtitleLable.text = education.subtitle
+        cell.hashTagLable.text = education.hashTag
         return cell
     }
     

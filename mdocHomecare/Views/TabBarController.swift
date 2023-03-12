@@ -29,12 +29,11 @@ class TabBarController: UITabBarController {
         educationVC.tabBarItem.image = Asset.TabBarImages.education.image
         educationVC.tabBarItem.title = "교육자료"
         
-        let settingVC = UINavigationController(rootViewController: SettingViewController())
-        settingVC.navigationItem.title = "ddddddal"
-        settingVC.tabBarItem.image = Asset.TabBarImages.setting.image
-        settingVC.tabBarItem.title = "더보기"
+        let viewMoreVC = UINavigationController(rootViewController: ViewMoreViewController())
+        viewMoreVC.tabBarItem.image = Asset.TabBarImages.setting.image
+        viewMoreVC.tabBarItem.title = "더보기"
         
-        setViewControllers([homeVC, educationVC, settingVC], animated: true)
+        setViewControllers([homeVC, educationVC, viewMoreVC], animated: true)
     }
 }
 

@@ -1,0 +1,1203 @@
+# this is an auto generated file. This will be overwritten
+query GetImpossible($id: ID!) {
+  getImpossible(id: $id) {
+    id
+    userID
+    ttime
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+query ListImpossibles(
+  $filter: ModelImpossibleFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listImpossibles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userID
+      ttime
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncImpossibles(
+  $filter: ModelImpossibleFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncImpossibles(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      userID
+      ttime
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetMySchedule($id: ID!) {
+  getMySchedule(id: $id) {
+    id
+    userID
+    scheduleID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+query ListMySchedules(
+  $filter: ModelMyScheduleFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMySchedules(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userID
+      scheduleID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncMySchedules(
+  $filter: ModelMyScheduleFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncMySchedules(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      userID
+      scheduleID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetSchedule($id: ID!) {
+  getSchedule(id: $id) {
+    id
+    Reservation
+    ttime
+    time
+    BOOK
+    Users {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+query ListSchedules(
+  $filter: ModelScheduleFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listSchedules(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncSchedules(
+  $filter: ModelScheduleFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncSchedules(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetQuestionnarie($id: ID!) {
+  getQuestionnarie(id: $id) {
+    id
+    content
+    Q1
+    Q2
+    Q3
+    Q4
+    Q5
+    Q6
+    Q7
+    userID
+    chatroomID
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+query ListQuestionnaries(
+  $filter: ModelQuestionnarieFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listQuestionnaries(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      content
+      Q1
+      Q2
+      Q3
+      Q4
+      Q5
+      Q6
+      Q7
+      userID
+      chatroomID
+      state
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncQuestionnaries(
+  $filter: ModelQuestionnarieFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncQuestionnaries(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      content
+      Q1
+      Q2
+      Q3
+      Q4
+      Q5
+      Q6
+      Q7
+      userID
+      chatroomID
+      state
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetChatRoom($id: ID!) {
+  getChatRoom(id: $id) {
+    id
+    newMessages
+    name
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Users {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    LastMessage {
+      id
+      image
+      status
+      content
+      userID
+      chatroomID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    chatRoomLastMessageId
+    chatRoomScheduleId
+  }
+}
+query ListChatRooms(
+  $filter: ModelChatRoomFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listChatRooms(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      newMessages
+      name
+      Messages {
+        nextToken
+        startedAt
+      }
+      Users {
+        nextToken
+        startedAt
+      }
+      LastMessage {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      Schedule {
+        id
+        Reservation
+        ttime
+        time
+        BOOK
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      state
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      chatRoomLastMessageId
+      chatRoomScheduleId
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncChatRooms(
+  $filter: ModelChatRoomFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncChatRooms(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      newMessages
+      name
+      Messages {
+        nextToken
+        startedAt
+      }
+      Users {
+        nextToken
+        startedAt
+      }
+      LastMessage {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      Schedule {
+        id
+        Reservation
+        ttime
+        time
+        BOOK
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      state
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      chatRoomLastMessageId
+      chatRoomScheduleId
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetMessage($id: ID!) {
+  getMessage(id: $id) {
+    id
+    image
+    status
+    content
+    userID
+    chatroomID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+query ListMessages(
+  $filter: ModelMessageFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMessages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      image
+      status
+      content
+      userID
+      chatroomID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncMessages(
+  $filter: ModelMessageFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncMessages(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      image
+      status
+      content
+      userID
+      chatroomID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetUser($id: ID!) {
+  getUser(id: $id) {
+    id
+    name
+    patientNumber
+    phoneNumber
+    email
+    status
+    lastOnlineAt
+    schedules {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    chatrooms {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    sex
+    born
+    phoneNOK
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+query ListUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncUsers(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetScheduleUser($id: ID!) {
+  getScheduleUser(id: $id) {
+    id
+    scheduleID
+    userID
+    schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+query ListScheduleUsers(
+  $filter: ModelScheduleUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listScheduleUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      scheduleID
+      userID
+      schedule {
+        id
+        Reservation
+        ttime
+        time
+        BOOK
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      user {
+        id
+        name
+        patientNumber
+        phoneNumber
+        email
+        status
+        lastOnlineAt
+        state
+        sex
+        born
+        phoneNOK
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncScheduleUsers(
+  $filter: ModelScheduleUserFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncScheduleUsers(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      scheduleID
+      userID
+      schedule {
+        id
+        Reservation
+        ttime
+        time
+        BOOK
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      user {
+        id
+        name
+        patientNumber
+        phoneNumber
+        email
+        status
+        lastOnlineAt
+        state
+        sex
+        born
+        phoneNOK
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetChatRoomUser($id: ID!) {
+  getChatRoomUser(id: $id) {
+    id
+    chatRoomID
+    userID
+    chatRoom {
+      id
+      newMessages
+      name
+      Messages {
+        nextToken
+        startedAt
+      }
+      Users {
+        nextToken
+        startedAt
+      }
+      LastMessage {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      Schedule {
+        id
+        Reservation
+        ttime
+        time
+        BOOK
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      state
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      chatRoomLastMessageId
+      chatRoomScheduleId
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+query ListChatRoomUsers(
+  $filter: ModelChatRoomUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listChatRoomUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      chatRoomID
+      userID
+      chatRoom {
+        id
+        newMessages
+        name
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        chatRoomLastMessageId
+        chatRoomScheduleId
+      }
+      user {
+        id
+        name
+        patientNumber
+        phoneNumber
+        email
+        status
+        lastOnlineAt
+        state
+        sex
+        born
+        phoneNOK
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncChatRoomUsers(
+  $filter: ModelChatRoomUserFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncChatRoomUsers(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      chatRoomID
+      userID
+      chatRoom {
+        id
+        newMessages
+        name
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        chatRoomLastMessageId
+        chatRoomScheduleId
+      }
+      user {
+        id
+        name
+        patientNumber
+        phoneNumber
+        email
+        status
+        lastOnlineAt
+        state
+        sex
+        born
+        phoneNOK
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    nextToken
+    startedAt
+  }
+}

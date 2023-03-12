@@ -1,0 +1,1471 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateImpossible(
+  $filter: ModelSubscriptionImpossibleFilterInput
+) {
+  onCreateImpossible(filter: $filter) {
+    id
+    userID
+    ttime
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnUpdateImpossible(
+  $filter: ModelSubscriptionImpossibleFilterInput
+) {
+  onUpdateImpossible(filter: $filter) {
+    id
+    userID
+    ttime
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnDeleteImpossible(
+  $filter: ModelSubscriptionImpossibleFilterInput
+) {
+  onDeleteImpossible(filter: $filter) {
+    id
+    userID
+    ttime
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnCreateMySchedule(
+  $filter: ModelSubscriptionMyScheduleFilterInput
+) {
+  onCreateMySchedule(filter: $filter) {
+    id
+    userID
+    scheduleID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnUpdateMySchedule(
+  $filter: ModelSubscriptionMyScheduleFilterInput
+) {
+  onUpdateMySchedule(filter: $filter) {
+    id
+    userID
+    scheduleID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnDeleteMySchedule(
+  $filter: ModelSubscriptionMyScheduleFilterInput
+) {
+  onDeleteMySchedule(filter: $filter) {
+    id
+    userID
+    scheduleID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnCreateSchedule($filter: ModelSubscriptionScheduleFilterInput) {
+  onCreateSchedule(filter: $filter) {
+    id
+    Reservation
+    ttime
+    time
+    BOOK
+    Users {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnUpdateSchedule($filter: ModelSubscriptionScheduleFilterInput) {
+  onUpdateSchedule(filter: $filter) {
+    id
+    Reservation
+    ttime
+    time
+    BOOK
+    Users {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnDeleteSchedule($filter: ModelSubscriptionScheduleFilterInput) {
+  onDeleteSchedule(filter: $filter) {
+    id
+    Reservation
+    ttime
+    time
+    BOOK
+    Users {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnCreateQuestionnarie(
+  $filter: ModelSubscriptionQuestionnarieFilterInput
+) {
+  onCreateQuestionnarie(filter: $filter) {
+    id
+    content
+    Q1
+    Q2
+    Q3
+    Q4
+    Q5
+    Q6
+    Q7
+    userID
+    chatroomID
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnUpdateQuestionnarie(
+  $filter: ModelSubscriptionQuestionnarieFilterInput
+) {
+  onUpdateQuestionnarie(filter: $filter) {
+    id
+    content
+    Q1
+    Q2
+    Q3
+    Q4
+    Q5
+    Q6
+    Q7
+    userID
+    chatroomID
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnDeleteQuestionnarie(
+  $filter: ModelSubscriptionQuestionnarieFilterInput
+) {
+  onDeleteQuestionnarie(filter: $filter) {
+    id
+    content
+    Q1
+    Q2
+    Q3
+    Q4
+    Q5
+    Q6
+    Q7
+    userID
+    chatroomID
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnCreateChatRoom($filter: ModelSubscriptionChatRoomFilterInput) {
+  onCreateChatRoom(filter: $filter) {
+    id
+    newMessages
+    name
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Users {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    LastMessage {
+      id
+      image
+      status
+      content
+      userID
+      chatroomID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    chatRoomLastMessageId
+    chatRoomScheduleId
+  }
+}
+subscription OnUpdateChatRoom($filter: ModelSubscriptionChatRoomFilterInput) {
+  onUpdateChatRoom(filter: $filter) {
+    id
+    newMessages
+    name
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Users {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    LastMessage {
+      id
+      image
+      status
+      content
+      userID
+      chatroomID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    chatRoomLastMessageId
+    chatRoomScheduleId
+  }
+}
+subscription OnDeleteChatRoom($filter: ModelSubscriptionChatRoomFilterInput) {
+  onDeleteChatRoom(filter: $filter) {
+    id
+    newMessages
+    name
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Users {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    LastMessage {
+      id
+      image
+      status
+      content
+      userID
+      chatroomID
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    state
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+    chatRoomLastMessageId
+    chatRoomScheduleId
+  }
+}
+subscription OnCreateMessage($filter: ModelSubscriptionMessageFilterInput) {
+  onCreateMessage(filter: $filter) {
+    id
+    image
+    status
+    content
+    userID
+    chatroomID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnUpdateMessage($filter: ModelSubscriptionMessageFilterInput) {
+  onUpdateMessage(filter: $filter) {
+    id
+    image
+    status
+    content
+    userID
+    chatroomID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnDeleteMessage($filter: ModelSubscriptionMessageFilterInput) {
+  onDeleteMessage(filter: $filter) {
+    id
+    image
+    status
+    content
+    userID
+    chatroomID
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnCreateUser($filter: ModelSubscriptionUserFilterInput) {
+  onCreateUser(filter: $filter) {
+    id
+    name
+    patientNumber
+    phoneNumber
+    email
+    status
+    lastOnlineAt
+    schedules {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    chatrooms {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    sex
+    born
+    phoneNOK
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnUpdateUser($filter: ModelSubscriptionUserFilterInput) {
+  onUpdateUser(filter: $filter) {
+    id
+    name
+    patientNumber
+    phoneNumber
+    email
+    status
+    lastOnlineAt
+    schedules {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    chatrooms {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    sex
+    born
+    phoneNOK
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnDeleteUser($filter: ModelSubscriptionUserFilterInput) {
+  onDeleteUser(filter: $filter) {
+    id
+    name
+    patientNumber
+    phoneNumber
+    email
+    status
+    lastOnlineAt
+    schedules {
+      items {
+        id
+        scheduleID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Messages {
+      items {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    Questionnaries {
+      items {
+        id
+        content
+        Q1
+        Q2
+        Q3
+        Q4
+        Q5
+        Q6
+        Q7
+        userID
+        chatroomID
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    chatrooms {
+      items {
+        id
+        chatRoomID
+        userID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    state
+    MySchedules {
+      items {
+        id
+        userID
+        scheduleID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+    sex
+    born
+    phoneNOK
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnCreateScheduleUser(
+  $filter: ModelSubscriptionScheduleUserFilterInput
+) {
+  onCreateScheduleUser(filter: $filter) {
+    id
+    scheduleID
+    userID
+    schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnUpdateScheduleUser(
+  $filter: ModelSubscriptionScheduleUserFilterInput
+) {
+  onUpdateScheduleUser(filter: $filter) {
+    id
+    scheduleID
+    userID
+    schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnDeleteScheduleUser(
+  $filter: ModelSubscriptionScheduleUserFilterInput
+) {
+  onDeleteScheduleUser(filter: $filter) {
+    id
+    scheduleID
+    userID
+    schedule {
+      id
+      Reservation
+      ttime
+      time
+      BOOK
+      Users {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnCreateChatRoomUser(
+  $filter: ModelSubscriptionChatRoomUserFilterInput
+) {
+  onCreateChatRoomUser(filter: $filter) {
+    id
+    chatRoomID
+    userID
+    chatRoom {
+      id
+      newMessages
+      name
+      Messages {
+        nextToken
+        startedAt
+      }
+      Users {
+        nextToken
+        startedAt
+      }
+      LastMessage {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      Schedule {
+        id
+        Reservation
+        ttime
+        time
+        BOOK
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      state
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      chatRoomLastMessageId
+      chatRoomScheduleId
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnUpdateChatRoomUser(
+  $filter: ModelSubscriptionChatRoomUserFilterInput
+) {
+  onUpdateChatRoomUser(filter: $filter) {
+    id
+    chatRoomID
+    userID
+    chatRoom {
+      id
+      newMessages
+      name
+      Messages {
+        nextToken
+        startedAt
+      }
+      Users {
+        nextToken
+        startedAt
+      }
+      LastMessage {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      Schedule {
+        id
+        Reservation
+        ttime
+        time
+        BOOK
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      state
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      chatRoomLastMessageId
+      chatRoomScheduleId
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnDeleteChatRoomUser(
+  $filter: ModelSubscriptionChatRoomUserFilterInput
+) {
+  onDeleteChatRoomUser(filter: $filter) {
+    id
+    chatRoomID
+    userID
+    chatRoom {
+      id
+      newMessages
+      name
+      Messages {
+        nextToken
+        startedAt
+      }
+      Users {
+        nextToken
+        startedAt
+      }
+      LastMessage {
+        id
+        image
+        status
+        content
+        userID
+        chatroomID
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      Schedule {
+        id
+        Reservation
+        ttime
+        time
+        BOOK
+        state
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      state
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      chatRoomLastMessageId
+      chatRoomScheduleId
+    }
+    user {
+      id
+      name
+      patientNumber
+      phoneNumber
+      email
+      status
+      lastOnlineAt
+      schedules {
+        nextToken
+        startedAt
+      }
+      Messages {
+        nextToken
+        startedAt
+      }
+      Questionnaries {
+        nextToken
+        startedAt
+      }
+      chatrooms {
+        nextToken
+        startedAt
+      }
+      state
+      MySchedules {
+        nextToken
+        startedAt
+      }
+      sex
+      born
+      phoneNOK
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}

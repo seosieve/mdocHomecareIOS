@@ -139,6 +139,14 @@ struct AuthPluginErrorConstants {
     static let changePasswordSignedOutError: AuthPluginErrorString = (
     "Could not change password, there is no user signed in to the Auth category",
     "Change password require a user signed in to Auth category, use one of the signIn apis to signIn")
+
+    static let changePasswordUnableToSignInError: AuthPluginErrorString = (
+    "Could not change password, the user session is expired",
+    "Re-authenticate the user by using one of the signIn apis")
+
+    static let userSignedOutError: AuthPluginErrorString = (
+    "There is no user signed in to the Auth category",
+    "SignIn to Auth category by using one of the sign in methods and then try again")
 }
 
 // Field validation errors
@@ -146,7 +154,7 @@ extension AuthPluginErrorConstants {
     static let signInUsernameError: AuthPluginValidationErrorString = (
         "username",
         "Username is required to signIn",
-        "Make sure that a valid username is passed during sigIn"
+        "Make sure that a valid username is passed during signIn"
     )
 
     static let signUpUsernameError: AuthPluginValidationErrorString = (

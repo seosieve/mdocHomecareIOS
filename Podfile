@@ -10,10 +10,13 @@ target 'mdocHomecare' do
   pod 'RxRelay', '~> 6.5'
   pod 'RxCocoa', '~> 6.5'
   pod 'Amplify'
+  pod 'AmplifyPlugins/AWSAPIPlugin'
+  pod 'AmplifyPlugins/AWSDataStorePlugin'
   pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
   pod 'SnapKit', '~> 5.0.0'
   pod 'Then'
   pod 'Firebase'
   pod 'Firebase/Messaging'
   pod "YoutubePlayer-in-WKWebView", "~> 0.3.0"
+  pod 'FSCalendar'
 end

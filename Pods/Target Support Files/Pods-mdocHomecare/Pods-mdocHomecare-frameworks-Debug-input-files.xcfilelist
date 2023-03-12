@@ -7,6 +7,8 @@ ${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework
 ${BUILT_PRODUCTS_DIR}/AWSPluginsCore/AWSPluginsCore.framework
 ${BUILT_PRODUCTS_DIR}/Amplify/Amplify.framework
 ${BUILT_PRODUCTS_DIR}/AmplifyPlugins/AmplifyPlugins.framework
+${BUILT_PRODUCTS_DIR}/AppSyncRealTimeClient/AppSyncRealTimeClient.framework
+${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework
@@ -17,7 +19,9 @@ ${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework
 ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
 ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
 ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework
 ${BUILT_PRODUCTS_DIR}/Then/Then.framework
 ${BUILT_PRODUCTS_DIR}/YoutubePlayer-in-WKWebView/YoutubePlayer_in_WKWebView.framework
 ${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework

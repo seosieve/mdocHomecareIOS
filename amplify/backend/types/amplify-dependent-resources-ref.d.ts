@@ -1,6 +1,21 @@
 export type AmplifyDependentResourcesAttributes = {
+    "api": {
+        "mdochomecare": {
+            "GraphQLAPIKeyOutput": "string",
+            "GraphQLAPIIdOutput": "string",
+            "GraphQLAPIEndpointOutput": "string"
+        }
+    },
+    "function": {
+        "mdochomecarea6f40e9ba6f40e9bPostConfirmation": {
+            "Name": "string",
+            "Arn": "string",
+            "LambdaExecutionRole": "string",
+            "Region": "string"
+        }
+    },
     "auth": {
-        "mdochomecare2893848c2893848c": {
+        "mdochomecarea6f40e9ba6f40e9b": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
@@ -9,6 +24,12 @@ export type AmplifyDependentResourcesAttributes = {
             "AppClientIDWeb": "string",
             "AppClientID": "string",
             "CreatedSNSRole": "string"
+        }
+    },
+    "storage": {
+        "s3mdochomecarestorage9497a197": {
+            "BucketName": "string",
+            "Region": "string"
         }
     }
 }

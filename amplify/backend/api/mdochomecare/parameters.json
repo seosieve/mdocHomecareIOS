@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "mdochomecare",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2022-11-08T18:02:18.030Z"
+}

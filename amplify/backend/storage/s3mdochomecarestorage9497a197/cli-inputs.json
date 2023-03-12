@@ -1,0 +1,16 @@
+{
+  "resourceName": "s3mdochomecarestorage9497a197",
+  "bucketName": "mdochomecare-storage-9497a197",
+  "policyUUID": "1d5b7c52",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
